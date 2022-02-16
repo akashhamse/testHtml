@@ -1,23 +1,1377 @@
-<!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Bsic Project</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width,height=device-height,minimum-scale=1,maximum-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+     <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+	 <title>DEX Digital Business_2</title>
+     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" /> 
+    
+  </head>
+  <style>
+.ui-page.ui-page-theme-a {
+    background: #fff;
+    position: relative;
+}
+html.ui-mobile {
+    background: #fff;
+}
+.common-otr {
+    padding: 0 15px;
+    background: #fff;
+}
+    .common-otr .container {
+      width: 1140px;
+      margin: 0 auto;
+    }
+    p {
+      font-family: 'Inter', sans-serif;
+      color: #505A73;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 32px;
+    }
+    .blue-print p {
+      font-size: 18px;      
+    }
+    .heigh-text p {
+      color: #1A1C22;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 32px;
+    }
+    .heigh-text p span {
+      color: #E65A14;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 32px;
+    }
+    .heigh-text p span.blue {
+      color: #4094A7;
+    }
+.list-box-otr {
+    display: flex;
+    justify-content: space-between;
+}
+.component-list.component-list_otr .list-box-otr {
+    flex-wrap: wrap;
+}
+.list-box {
+    float: right;
+    border: 1px solid #E65A14;
+    border-radius: 8px;
+    padding: 15px;
+    width: calc((100% - 0px * 1) / 2);
+    margin-right: 25px;
+}
+.list-box:nth-child(2n) {
+    margin-right: 0;
+}
+.component-list.component-list_otr .list-box {
+    width: 100%;
+    margin: 0 0 25px;
+    padding: 14px;
+}
+.component-list.component-list_otr .list-box:nth-child(2n) {
+    border: 1px solid #4094A7;
+}
+.list-box span {
+    color: #1A1C22;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Inter', sans-serif;
+    margin: 0 0 10px;
+    display: table;
+}
+.list-box p {
+    color: #1A1C22;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Inter', sans-serif;
+}
+.component-list .list-box p {
+    display: block;
+    font-weight: 500;
+    color: #505A73;
+    font-size: 16px;
+    line-height: 30px;
+    margin: 0;
+}
+.component-list.component-list_otr .list-box ul {
+    margin: 0;
+    padding: 0 0 0 25px;
+}
+.component-list.component-list_otr .list-box ul li {  
+  font-family: 'Inter', sans-serif;
+  color: #E65A14;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 34px;
+  margin: 0 0 8px;
+}
+.component-list.component-list_otr .list-box:nth-child(2n) ul li {
+    color: #4094A7;
+}
+.component-list.component-list_otr.alti_blue-print {
+    display: table;
+    margin: 0 auto;
+    position: relative;
+    width: 94%;
+}
+.component-list.component-list_otr.alti_blue-print:before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 70%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    width: 30px;
+    height: 80%;
+    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwM2E4ZmQ0MDJkOTk2NGM4YjNjYjEzJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNF9BcnJvd2xlZnRfZWVjNGU4YmEyNSYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.component-list.component-list_otr.alti_blue-print .list-box-inner {
+    display: flex;
+    justify-content: space-between;
+    /* box-shadow: 0px 3px 5px 0px #464c9e30; */
+    margin: 0 0 20px;
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+    width: 100%;
+    border: 2px solid #95979F;
+}
+.component-list.component-list_otr.alti_blue-print .list-box-otr h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0 0 10px;
+    line-height: 20px;
+}
+.component-list.component-list_otr.alti_blue-print .list-box {
+    border: 1px solid #B4B7BF;
+    border-radius: 8px;
+    padding: 14px;
+    width: calc((100% - 28px * 1) / 2);
+    margin-right: 28px;
+    position: relative;
+    margin-bottom: 0;
+}
+.component-list.component-list_otr.alti_blue-print .list-box:nth-child(2n) {
+    margin-right: 0;
+}
+.component-list.component-list_otr.alti_blue-print .list-box:first-child {
+    border: 1px solid #E65A14;
+}
+.component-list.component-list_otr.alti_blue-print .list-box-inner:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    font-size: 15px;
+    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBiNjc0MDJkOTk2NGM4YjNjYWEzJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNF9BcnJvd182NDExMTk4NmY4JiYmJm1pbWU9aW1hZ2UvcG5nJiYmJmV4dD0ucG5nJiYmJnByb3ZpZGVyPWN1c3RvbS1hd3MtczM=);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 13px;
+    height: 15px;
+}
+.component-list.component-list_otr.alti_blue-print .list-box.list-box-digital:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -29px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    font-size: 20px;
+    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBjNzM0MDJkOTk2NGM4YjNjYWE5JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNF9QbHVzXzQ3NzM3MWQzMTUmJiYmbWltZT1pbWFnZS9wbmcmJiYmZXh0PS5wbmcmJiYmcHJvdmlkZXI9Y3VzdG9tLWF3cy1zMw==);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+}
+.component-list.component-list_otr.alti_blue-print .list-box.list-box-digital {
+    width: 100%;
+    border: 1px solid #4094A7;
+    margin-top: 20px;
+}
+.component-list.component-list_otr.alti_blue-print .list-box ul {
+    margin: 0;
+    padding: 0 0 0 15px;
+}
+.component-list.component-list_otr.alti_blue-print .list-box ul li {
+    font-family: 'Inter', sans-serif;
+    color: #505A73;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0 0 8px;
+}
+.driving-img {
+    position: relative;
+    display: table;
+    width: 94%;
+    margin: 0 auto;
+}
+.driving-img p {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.title {
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+}
+.list-box .title img {
+    float: left;
+    width: 40px;
+    height: auto;
+}
+.list-box .title h3 {
+    font-family: 'Inter', sans-serif;
+    margin: 0 0 0 5px;
+    color: #1A1C22;
+    font-size: 18px;
+    line-height: 28px;
+}
+.uniq_approach .list-box {
+    border: 1px solid #4094A7;
+}
+.common-otr.empower .list-box-otr {
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 0;
+}
+.common-otr.empower .list-box-otr:before {
+    content: "";
+    position: absolute;
+    bottom: -240px;
+    right: 0;
+    width: 100%;
+    height: 70%;
+    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBkZTk0MDJkOTk2NGM4YjNjYWI1JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNl83XzhfQkdfSW1hZ2VfOGFlM2M1YzdkZCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz);
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.common-otr.empower .list-box {
+    border: 1px solid #4094A7;
+    border-radius: 8px;
+    padding: 14px;
+    width: 100%;
+    margin: 0 0 25px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+}
+.common-otr.empower .title {
+    margin: 0 25px 0 0;
+    float: left;
+    display: block;
+}
+.common-otr.empower .list-box .title img {
+    width: 90px;
+    height: auto;
+    float: none;
+}
+.common-otr.empower .list-box .title h3 {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    color: #1A1C22;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+}
+.ui-page.ui-page-theme-a.ui-page-active {
+  overflow: initial;
+}
+.component-list.SSOT-cont .list-box-otr {
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 0;
+}
+.component-list.SSOT-cont .list-box-otr:before {
+    content: "";
+    position: absolute;
+    bottom: -100px;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBkZTk0MDJkOTk2NGM4YjNjYWI1JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNl83XzhfQkdfSW1hZ2VfOGFlM2M1YzdkZCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz);
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.component-list.SSOT-cont .list-box-inner {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 0;
+    padding: 0;
+    border-radius: 8px;
+    position: relative;
+    width: 100%;
+}
+.component-list.SSOT-cont .list-box-inner .list-box {
+    padding: 14px;
+    width: calc((100% - 24px * 1) / 2);
+    margin-right: 24px;
+    position: relative;
+    border: 1px solid #4094A7;
+    border-radius: 8px;
+}
+.component-list.SSOT-cont .list-box-inner .list-box:nth-child(2n) {
+    margin-right: 0;
+}
+.down-arrow-link {
+    display: table;
+    margin: 0 auto;
+    width: 100%;
+}
+.down-arrow-link img {
+    width: 45%;
+    display: table;
+    margin: 0 auto;
+}
+.ssot-btn-link {
+    display: table;
+    margin: 0 auto;
+}
+.ssot-btn-link a {
+    float: left;
+    background: #E65A14;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    height: 38px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    line-height: 15px;
+    padding: 0 30px;
+    width: 80px;
+    font-weight: 700;
+    text-shadow: none;
+}
+.ssot-btn-link a:hover {
+    color: #fff;
+}
+.list-box.list-box-digital {
+    width: 100%;
+    border: 1px solid #4094A7;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-right: 0;
+    background: #fff;
+    position: relative;
+}
+.list-box.list-box-digital:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -22px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    font-size: 20px;
+    color: #B4B7BF;
+    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBmNWI0MDJkOTk2NGM4YjNjYWM0JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlMDdfQXJyb3dfYTZmMWRiNTY3NyYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 15px;
+    height: 15px;
+}
+.list-box.list-box-digital:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    font-size: 20px;
+    color: #B4B7BF;
+    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBmNWI0MDJkOTk2NGM4YjNjYWM0JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlMDdfQXJyb3dfYTZmMWRiNTY3NyYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 15px;
+    height: 15px;
+}
+.outcomes-btn-link {
+    display: table;
+    margin: 0 auto;
+}
+.outcomes-btn-link a {
+    float: left;
+    background: #E65A14;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 15px;
+    padding: 10px 15px;
+    width: 180px;
+    font-weight: 600;
+    flex-wrap: wrap;
+    text-align: left;
+    text-shadow: none;
+}
+.outcomes-btn-link a:hover {
+    color: #fff;
+}
+.outcomes-btn-link a span {
+    font-weight: 500;
+    line-height: 20px;
+    display: table;
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+.component-list.SSOT-cont p {
+    margin: 15px 0 40px;
+    font-size: 12px;
+    line-height: 21px;
+    position: relative;
+}
+.component-list.SSOT-cont .list-box p {
+    display: block;
+    font-weight: 500;
+    color: #505A73;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0;
+}
+.component-list.innova_art {
+    display: table;
+    width: 100%;
+    margin: 40px auto 0;
+    position: relative;
+}
+.component-list.innova_art:before {
+    content: "";
+    position: absolute;
+    left: -22px;
+    top: 0;
+    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBmZDU0MDJkOTk2NGM4YjNjYWM3JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlOF9JbWFnZTFfZjRjMzcyOTZlZCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 22px;
+    height: 100%;
+}
+.component-list.innova_art:after {
+    content: "";
+    position: absolute;
+    right: -22px;
+    top: 0;
+    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjEwMDY0MDJkOTk2NGM4YjNjYWNhJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlOF9JbWFnZTJfY2IyMmFiYTljMiYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 22px;
+    height: 100%;
+}
+.component-list.start_outcome .outcomes-btn-link {
+    display: flex;
+}
+.component-list.innova_art .list-box-otr {
+    flex-wrap: wrap;
+}
+.component-list.innova_art .list-box {
+    border: 1px solid #4094A7;
+    border-radius: 8px;
+    padding: 14px;
+    width: 100%;
+    position: relative;
+    float: none;
+    margin: 0;
+}
+.component-list.innova_art .list-box .title img {
+    float: left;
+    width: 30px;
+    height: auto;
+}
+.component-list.innova_art .list-box .title h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 19px;
+    margin: 0 0 0 10px;
+    line-height: 20px;
+}
+.innovate_welcome-otr {
+    display: table;
+    margin: 0 auto 50px;
+    position: relative;
+    padding: 90px 0;
+    z-index: 0;
+}
+.innovate_welcome-otr:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBkZTk0MDJkOTk2NGM4YjNjYWI1JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNl83XzhfQkdfSW1hZ2VfOGFlM2M1YzdkZCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz);
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.heigh-text.innovate_title {
+    display: table;
+    margin: 0 auto 0;
+}
+.welcome-text.innovate_cont {
+    display: table;
+    margin: 0 auto 30px;
+}
+.heigh-text.innovate_title p {
+    margin: 0;
+}
+.heigh-text.innovate_title p span {
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    display: table;
+}
+.welcome-text.innovate_cont p {
+    margin: 0;
+    font-size: 16px;
+}
+.business_cont-outer {
+    display: table;
+    margin: 0 auto;
+    position: relative;
+    z-index: 0;
+}
+.business_cont-outer:before {
+    content: "";
+    position: absolute;
+    top: 51px;
+    left: 0;
+    border-left: 2px solid #E65A14;
+    width: 120px;
+    height: 56%;
+    border-bottom: 2px solid #E65A14;
+    z-index: -1;
+}
+.business_cont-outer:after {
+    content: "";
+    position: absolute;
+    top: 51px;
+    right: 0;
+    border-right: 2px solid #E65A14;
+    width: 120px;
+    height: 56%;
+    border-bottom: 2px solid #E65A14;
+    z-index: -1;
+}
+.business_cont-inner {
+    display: table;
+    margin: 0 auto;
+    position: relative;
+}
+.business_cont-inner:before {
+    content: "";
+    position: absolute;
+    top: 44px;
+    left: -6px;
+    width: 13px;
+    height: 13px;
+    background: #E65A14;
+    border-radius: 50%;
+}
+.business_cont-inner:after {
+    content: "";
+    position: absolute;
+    top: 44px;
+    right: -6px;
+    width: 13px;
+    height: 13px;
+    background: #E65A14;
+    border-radius: 50%;
+}
+.business_list-otr {
+    display: table;
+    width: 90%;
+    margin: 40px auto 0;
+}
+.business_list-otr .outcomes {
+    float: left;
+}
+.business_list-otr h3 {
+    margin: 0;
+    font-weight: 600;
+    color: #1A1C22;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+}
+.business_list-otr span {
+    margin: 15px 0 0;
+    font-weight: 600;
+    color: #4094A7;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    display: table;
+}
+.business_list-otr .oprations-inner {
+    float: right;
+}
+.business_list-otr h3 {
+    margin: 0;
+    font-weight: 600;
+    color: #1A1C22;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+}
+.business_cont-outer .component-list {
+    display: table;
+    width: 100%;
+    margin: 40px 0 0;
+}
+.business_cont-outer .component-list .list-box-otr {
+    flex-wrap: wrap;
+}
+.business_cont-outer .list-box {
+    border: 1px solid #4094A7;
+    border-radius: 8px;
+    padding: 5px 10px;
+    width: 70%;
+    position: relative;
+    display: table;
+    margin: 0 auto;
+    background: #fff;
+}
+.business_cont-outer .component-list .list-box p {
+    display: block;
+    font-weight: 500;
+    color: #505A73;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    margin: 0;
+}
+.business_img_otr {
+    display: table;
+    margin: 70px auto 30px;
+}
+.business_img_otr img {
+    display: table;
+    margin: 0 auto;
+    width: 70%;
+}
+.component-list.start_outcome {
+    display: table;
+    width: 100%;
+    margin: 40px 0 0;
+}
+.component-list.start_outcome .list-box {
+    border: 1px solid #4094A7;
+    border-radius: 8px;
+    padding: 20px 7px 15px;
+    width: auto;
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+}
+.component-list.start_outcome .list-box span.pop-text {
+    position: absolute;
+    top: -14px;
+    left: 12px;
+    background: #fff;
+    border: 1px solid #4094A7;
+    border-radius: 50px;
+    font-size: 12px;
+    color: #E65A14;
+    padding: 0 10px 0;
+}
+.component-list.start_outcome .list-box .title {
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+}
+.component-list.start_outcome .list-box .title img {
+    width: 80px;
+}
+.component-list.start_outcome .list-box p {
+    display: block;
+    font-weight: 500;
+    color: #505A73;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: left;
+    margin: 0 0 0 10px;
+}
+.list-box.ssot_list-inner {
+    width: auto;
+    padding: 10px 8px;
+    margin: 0 auto 21px;
+}
+.component-list.start_outcome .list-box.ssot_list-inner:nth-child(2) {
+    margin-top: 21px;
+}
+.component-list.start_outcome .list-box.ssot_list-inner:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -18px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    font-size: 20px;
+    color: #E65A14;
+    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjEwYWY0MDJkOTk2NGM4YjNjYWQwJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlMTBfQXJyb3dfZDgxYjEyMDZlMCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 12px;
+    height: 12px;
+}
+.component-list.start_outcome .list-box.ssot_list-inner p {
+    margin: 0;
+}
+.component-list.start_outcome .list-box.ssot_list-inner:nth-child(5) {
+    width: 63%;
+}
+.component-list.start_outcome .list-box.ssot_list-inner {
+    width: auto;
+    padding: 10px 8px;
+    margin: 0 auto 21px;
+}
+.outcomes-btn-link {
+    display: table;
+    margin: 0 auto;
+    position: relative;
+}
+.outcomes-btn-link:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -19px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    font-size: 20px;
+    color: #E65A14;
+    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjEwYWY0MDJkOTk2NGM4YjNjYWQwJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlMTBfQXJyb3dfZDgxYjEyMDZlMCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 12px;
+    height: 12px;
+}
+.outcomes-btn-link a {
+    background: #E65A14;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    height: 43px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 15px;
+    padding: 4px 15px;
+    font-weight: 500;
+    display: table;
+    float: none;
+    width: 180px;
+    text-align: left;
+}
+.component-list.start_outcome .list-box.partner_otr {
+    margin: 50px auto 10px;
+}
+.component-list.start_outcome .list-box-otr {
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.common-otr.collab_inner .heigh-text p {
+    color: #1A1C22;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 32px;
+    margin: 0 0 10px;
+}
+.common-otr.collab_inner .welcome-text p {
+    font-family: 'Inter', sans-serif;
+    color: #505A73;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+}
+.common-otr.collab_inner .heigh-text.culture_text p {
+    font-size: 18px;
+    line-height: 25px;
+}
+.collaboration_img_otr {
+    display: table;
+    margin: 0 auto 50px;
+    position: relative;
+}
+.collaboration_img_otr img {
+    display: table;
+    margin: 0 auto;
+    width: 100%;
+}
+.SSOt-last-bg {
+    display: table;
+    margin: 0 auto 30px;
+}
+.SSOt-last-bg img {
+    height: 100%;
+    display: table;
+}
+.common-otr.SSOt-welcome-inner .welcome-text p {
+    text-align: center;
+}
+.SSOt-last-bg2 {
+    display: table;
+    margin: 0 auto 100px;
+    width: 160px;
+}
+.SSOt-last-bg2 img {
+    height: 20px;
+    width: 100%;
+}
+.page-count_roll {
+    background: #fff;
+    margin: 0 auto 30px;
+    display: table;
+}
+.page-count_number span.page_count-numeber {
+    display: table;
+    float: right;
+    margin: 10px 10px 30px 0;
+    color: #95979F;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 19px;
+    position: relative;
+}
+.common-otr.empower {
+    margin: 0 0 180px;
+}
+@media (max-width: 1199px) {
+.common-otr .container {
+    width: 100%;
+    margin: 0 auto;
+}
+}
+@media (max-width: 460px) {
+  .business_list-otr h3 {
+    font-size: 13px;
+}
+.business_list-otr span {
+    font-size: 13px;
+}
+.component-list .list-box p {
+    font-size: 12px;
+}
+}
+@media (max-width: 320px) {
+  .business_list-otr h3 {
+    font-size: 12px;
+}
+.business_list-otr span {
+    font-size: 12px;
+}
+.component-list .list-box p {
+    font-size: 11px;
+}
+}
+  </style>
+  
+  <body>
+    <div class="page-count_roll">
+     <div data-role="page" id="article1" class="page-count_number">
+    <div class="common-otr">
+      <div class="container">
+        <div class="welcome-text">
+          <p>Digital Business presents unlimited opportunities through a Single Source of Truth (SSOT) for decision making and continuous innovation and experimentation with 
+            minimal investment.
+          </p>
+          <img style="width: 100%; height: 100%;" src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBhY2U0MDJkOTk2NGM4YjNjYWEwJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlMl9JbWFnZTFfYTE2MGM5YTM4MCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
+        </div>
+        <div class="heigh-text">
+          <p>Why Digital Business <span>Drives Growth</span> and <span>Profitability</span> without Disrupting Current Business</p>
+        </div>
+        <div class="component-list">
+          <p>Two fundamental components that make it possible</p>
+          <div class="list-box-otr">
+            <div class="list-box">
+              <span>Single Source of Truth (SSOT)</span>
+              <p>Data that everyone can trust to give the right insights for new ideas and effective operations.</p>
+            </div>
+            <div class="list-box">
+              <span>Innovation</span>
+              <p>A culture of experimentation and the ability to create new digital products with speed.</p>
+            </div>
+          </div>
+          </div>      
+        <p>Together it creates a value stream across the company, with reusable digital assets.</p>
+      </div>
+    </div>
+    <span class="page_count-numeber">Page 02/12</span>
+	</div>
+	
+	
+	 <div data-role="page" id="article2" class="page-count_number">
+    <div class="common-otr">
+      <div class="container">
+        <div class="heigh-text">
+          <p><span>Digital</span> Transformation VS Digital <span class="blue">BUSINESS</span>
+          </p>
+        </div>
+        <div class="welcome-text">
+          <p>They may seem the same, but they are not.</p>
+        </div>
+        <div class="component-list component-list_otr">
+          <div class="list-box-otr">
+            <div class="list-box">
+              <ul>
+                <li>Technology takes the lead and tries to drive change</li>
+                <li>A big-bang approach to boil the ocean with little focus on outcomes</li>
+                <li>Focuses on technologies and solutions with big investments</li>
+                <li>Takes an app-based approach, adding further complexity</li>
+                <li>Complex and perpetuates a silo-ed approach</li>
+                <li>Can take months to deliver results</li>
+                <li>Innovation requires heavy investment</li>
+              </ul>
+            </div>
+            <div class="list-box">
+              <ul>
+                <li>Business takes ownership and collaborates with technology</li>
+                <li>Incremental approach leveraging existing resources to achieve bite-sized outcomes</li>
+                <li>Leverages data intelligently to make smarter decisions</li>
+                <li>Takes product engineering approach creating reusable digital assets</li>
+                <li>Focused on simplification and collaboration</li>
+                <li>Begins to deliver results in weeks</li>
+                <li>Continuous experimentation and innovation at low investment</li>
+              </ul>
+            </div>
+          </div>
+          </div> 
+        </div>
+      </div>
+      <span class="page_count-numeber">Page 03/12</span>
+	</div>
+	
+	
+	 <div data-role="page" id="article3" class="page-count_number">
+    <div class="common-otr blue-print">
+      <div class="container">
+        <div class="heigh-text">
+          <p>How Altimetrik <span>Enables Digital Business</span>
+          </p>
+        </div>
+        <div class="welcome-text">
+          <p>By converging the entire business, technology, and operations on an agile model.
+          </p>
+          <p>Altimetrik is a catalyst and digital partner to enable digital business without interruption. Through collaboration, we eliminate silos and develop 
+            innovative digital products with speed.
+          </p>
+        </div>
+        <div class="heigh-text">
+          <p><span>The Altimetrik Blueprint</span>
+          </p>
+        </div>
+        <div class="component-list component-list_otr alti_blue-print">
+          <div class="list-box-otr">
+            <div class="list-box-inner">
+            <div class="list-box">
+              <h3>Practitioners</h3>
+              <ul>
+                <li>Simplifies the entire process</li>
+                <li>Assesses the need</li>
+                <li>Creates end-to-end roadmap</li>
+                <li>Breaks into smaller sprints</li>
+              </ul>
+            </div>
+            <div class="list-box">
+              <h3>Disciplined Agile Engineering Teams</h3>
+              <ul>
+                <li>Formed as agile scrum teams</li>
+                <li>Work in short iterations</li>
+                <li>Deliver results in high frequency</li>
+              </ul>
+            </div>
+          </div>
+            <div class="list-box list-box-digital">
+              <h3>Business Digital Platform</h3>
+              <ul>
+                <li>Agile, cloud-based environment for end-to-end execution</li>
+                <li>Standardized engineering focused on reusable asset creation</li>
+              </ul>
+            </div>
+          </div>
+          </div> 
+          <div class="driving-img">
+            <p>Driving continuous collaboration between business and technology to make decisions based on data from the SSOT</p>
+            <img style="width: 100%; height: 100%;" src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBjMTI0MDJkOTk2NGM4YjNjYWE2JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNF9JbWFnZTFfZDZhZjMwNTRiOCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
+          </div>          
+        </div>
+      </div>
+      <span class="page_count-numeber">Page 04/12</span>
+	</div>
 
-        <link rel="stylesheet" type="text/css" href="site.css">
 
-        <script src="site.js"></script>
+  <div data-role="page" id="article4" class="page-count_number">
+    <div class="common-otr blue-print uniq_approach">
+      <div class="container">
+        <div class="heigh-text">
+          <p><span>Altimetrik Unique Approach</span>
+          </p>
+        </div>
+        <div class="welcome-text">
+          <p>Bringing together the key ingredients to enable Digital Business</p>
+        </div>
         
-    </head>
-    <body>
-        
-        <h1>Hello World</h1>
+        <div class="component-list component-list_otr">
+          <div class="list-box-otr">
+            <div class="list-box">
+              <div class="title">
+                <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBjY2M0MDJkOTk2NGM4YjNjYWFjJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNV9JbWFnZTFfZDU4YjdkNGE3NCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
+                <h3>TALENT</h3>
+              </div>
+                <p>Practitioners – the solution providers for business outcomes through simplification of the end-to-end process and breaking it into smaller 
+                  sprints.</p>
+                <p>Engineering teams – agile and collaborative, converging business and technology to build outcomes.</p>
+                <p>This is rare talent that we are highly focused on finding globally. In fact, our selection rate to find the people who can drive this new way of thinking is 10%.</p>
+            </div>
+            <div class="list-box">
+              <div class="title">
+                <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBkMTY0MDJkOTk2NGM4YjNjYWFmJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNV9JbWFnZTJfMmQzMWRkMGMzNCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
+                <h3>CULTURE</h3>
+              </div>
+                <p>Agile and focused on collaboration.</p>
+                <p>With an end-to-end perspective, our practitioners and engineering teams enable the business and technology to converge and accelerate outcomes.
+                  By breaking down the traditional silos, we create high productivity, solving problems through innovation.</p>
+            </div>
+            <div class="list-box">
+              <div class="title">
+                <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBkNjA0MDJkOTk2NGM4YjNjYWIyJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNV9JbWFnZTNfNGYwOGM4ODQ1MSYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
+                <h3>PLATFORM</h3>
+              </div>
+                <p>Our state-of-the-art business digital platform in the cloud creates an agile engineering environment for a simplified end-to-end orchestration of digital business without disrupting the existing business.</p>
+                <p>Leverages cloud and integrates with the SSOT and digital products to build reusable assets and components and orchestrates them with the existing systems and technologies to launch into operations. It takes care of security and compliance through DevSecOps that works in tandem with production teams to minimize risk.</p>
+            </div>
+          </div>
+          </div>                 
+        </div>
+      </div>
+      <span class="page_count-numeber">Page 05/12</span>
+  </div>
+    
 
-        <button class="myButton" onclick="sayHello()">Click Me</button>
+  <div data-role="page" id="article5" class="page-count_number">
+  <div class="common-otr empower">
+    <div class="container">
+      <div class="heigh-text">
+        <p>Key Digital Business Behavioral Patterns <span>Empowering Growth</span>
+        </p>
+      </div>        
+      <div class="component-list">
+        <div class="list-box-otr">
+          <div class="list-box">
+            <div class="title">
+              <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBlM2E0MDJkOTk2NGM4YjNjYWI4JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNl9JbWFnZTFfNDFiMGM1ZTliOCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
+              <h3>TALENT</h3>
+            </div>
+              <p>Simplification of the end-to-end process by breaking down into bite-sized pieces and delivering outcomes with speed through higher collaboration 
+                between business and technology.
+              </p>
+          </div>
+          <div class="list-box">
+            <div class="title">
+              <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBlYTk0MDJkOTk2NGM4YjNjYWJiJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNl9JbWFnZTJfY2MwN2IxYjM3MiYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
+              <h3>Increased Productivity</h3>
+            </div>
+              <p>Product Engineering approach that goes from low code to no code, is component-based building reusable assets leveraging existing resources.</p>
+          </div>
+          <div class="list-box">
+            <div class="title">
+              <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBlZDk0MDJkOTk2NGM4YjNjYWJlJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNl9JbWFnZTNfYWJlM2UyNTVlMCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
+              <h3>Data Driven & Experimentation</h3>
+            </div>
+              <p>Data gathered from across the enterprise and orchestrated into a SSOT empowering business and technology collaboration to make decisions and build 
+                new digital products faster.</p>
+          </div>
+          <div class="list-box">
+            <div class="title">
+              <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBmMDY0MDJkOTk2NGM4YjNjYWMxJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNl9JbWFnZTRfOTBhNzBiYzZhNCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
+              <h3>Faster Outcomes</h3>
+            </div>
+              <p>Outcomes achieved with speed and at an overall reduced cost due to increased productivity in teams and agility in solving problems.</p>
+          </div>
+        </div>
+        </div>                 
+      </div>
+    </div>
+    <span class="page_count-numeber">Page 06/12</span>
+  </div>
 
 
-    </body>
+  <div data-role="page" id="article6" class="page-count_number">
+    <div class="common-otr">
+      <div class="container">
+        <div class="heigh-text">
+          <p><span>Creating a Single Source of Truth</span> (SSOT) for Data
+          </p>
+        </div>
+        <div class="welcome-text">
+          <p>For many companies, data is decentralized and not digitized, collaboration is absent, silos are blocking outcomes and results are hard to achieve.</p>
+          <p>Regardless of data sources or technology our practitioners overcome these challenges by digitizing the data and simplifying end-to-end workflows in bite-sized 
+            pieces. They bring it all together to connect and analyze the data in small use cases that converge into the SSOT.</p>
+        </div>     
+        <div class="component-list SSOT-cont">
+          <div class="list-box-otr">
+            <div class="list-box-inner">
+              <div class="list-box">
+                  <p>Multiple Data Sources both structured and unstructured.</p>
+              </div>
+              <div class="list-box">
+                  <p>Digitized and connected through data pipelines based on required outcomes.</p>
+              </div>
+            </div>
+            <div class="down-arrow-link">
+              <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwM2FhMmU0MDJkOTk2NGM4YjNjYjIwJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlN19BcnJvdzJfNmFlNjVjMzgwNyYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
+            </div>
+            <div class="ssot-btn-link">
+              <a href="#">SSOT</a>
+            </div>
+            <div class="list-box list-box-digital">
+                <p>Sophisticated AI and ML algorithms used for analyzing, prediction, and forecasting.</p>
+                <p>Insights from trusted data to help various business functions take faster decisions, simulate scenarios, and adapt to change.</p>
+            </div>            
+            <div class="outcomes-btn-link">
+              <a href="#">OUTCOMES<span>Revenue, profit, cash, market share, brand value</span></a>
+            </div>
+          </div>
+          <p>(SSOT is extremely valuable for functions like demand, supply chain, inventory management, customer behavior among others.)</p>
+          </div>
+        </div>
+      </div>
+      <span class="page_count-numeber">Page 07/12</span>
+  </div>
+
+
+  <div data-role="page" id="article7" class="page-count_number">
+    <div class="common-otr">
+      <div class="container">
+        <div class="heigh-text">
+          <p>Successful Products and Solutions come from <span>Innovation and The Art of Experimentation</span>
+          </p>
+        </div>
+        <div class="welcome-text">
+          <p>Not a big bang approach, innovation and experimentation is best achieved through bite-sized pieces.</p>
+        </div>     
+        <div class="component-list innova_art">
+          <div class="list-box-otr">
+              <div class="list-box">                  
+              <div class="title">
+                <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwM2FhOWU0MDJkOTk2NGM4YjNjYjIzJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlOF9JbWFnZTNfYTUxNTU0MWRmMSYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
+                <h3>Shifting the lens:</h3>
+              </div>
+                  <p>Empowering employees to ideate and create simple solutions.</p>
+                  <p>Even a proof of concept is a product that can be reused.</p>
+                  <p>Build assets and accelerators that are reusable and scalable.</p>
+              </div>
+          </div>
+          </div>
+          <div class="innovate_welcome-otr">
+          <div class="heigh-text innovate_title">
+            <p><span>The flow is simple, and NOT cost intensive:</span>
+            </p>
+          </div>
+          <div class="welcome-text innovate_cont">
+            <p>Innovate. Experiment. Prove the Concept. Productize</p>
+          </div>
+        </div>
+        </div>
+      </div>
+      <span class="page_count-numeber">Page 08/12</span>
+  </div>
+
+  <div data-role="page" id="article8" class="page-count_number">
+    <div class="common-otr">
+      <div class="container">
+        <div class="heigh-text">
+          <p>Integrate Digital</p> 
+          <p><span>Business into Operations</span></p>
+        </div>
+        <div class="welcome-text">
+          <p>The idea is not to disrupt current systems and technologies, but to orchestrate them along with the SSOT and launch into the business operations.</p>
+          <p>Digital business does not change any existing system such as an ERP or operations management tools.</p>
+        </div>
+        <div class="business_cont-outer">
+          <div class="business_cont-inner">
+        <div class="business_list-otr">
+          <div class="outcomes">
+            <h3>Business Outcomes</h3>
+            <span>SSOT</span>
+          </div>
+          <div class="oprations-inner">
+            <h3>Business Operations</h3>
+          </div>
+        </div>     
+        <div class="component-list">
+          <div class="list-box-otr">
+              <div class="list-box"> 
+                  <p> Digital Business Platform orchestrates the end-to-end workflow and integrates seamlessly into operations.</p>
+              </div>
+          </div>
+          </div>
+        </div>
+        </div>
+          <div class="business_img_otr">
+            <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjEwNjQ0MDJkOTk2NGM4YjNjYWNkJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlOV9CR18yYWFhZmRjOTVjJiYmJm1pbWU9aW1hZ2UvcG5nJiYmJmV4dD0ucG5nJiYmJnByb3ZpZGVyPWN1c3RvbS1hd3MtczM=" />
+          </div>
+        </div>
+      </div>
+      <span class="page_count-numeber">Page 09/12</span>
+  </div>
+
+
+  <div data-role="page" id="article9" class="page-count_number">
+    <div class="common-otr">
+      <div class="container">
+        <div class="heigh-text"> 
+          <p><span>Where do you start</span></p>
+        </div>
+        <div class="welcome-text">
+          <p>Companies, especially mid-sized ones, don’t know where to start and are deterred by large companies making big investments without clear outcomes.</p>
+          <p>Digital business is not a choice, it is the path forward.</p>
+        </div>   
+        <div class="component-list start_outcome">
+          <div class="list-box-otr">
+              <div class="list-box">
+                <span class="pop-text">Start by identifying the pain points.</span>
+                <div class="title">
+                  <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjExMDM0MDJkOTk2NGM4YjNjYWQzJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlMTBfSW1hZ2UxXzhjMDY3NjZkOGEmJiYmbWltZT1pbWFnZS9wbmcmJiYmZXh0PS5wbmcmJiYmcHJvdmlkZXI9Y3VzdG9tLWF3cy1zMw==" />
+                </div>
+                  <p> For example, lack of knowledge of cash tied up in the supply chain could depress operational margins and profits. No insight to customer buying 
+                    behavior prevents the right product gets to the right customer at the right time.</p>
+              </div>
+              <div class="list-box ssot_list-inner">
+                <p>Create SSOT for each business function</p>
+              </div>
+              <div class="list-box ssot_list-inner">
+                <p>Bridge the business functions across the enterprise.</p>
+              </div>
+              <div class="list-box ssot_list-inner">
+                <p>Create SSOT at enterprise level</p>
+              </div>
+              <div class="list-box ssot_list-inner">
+                <p>Create culture of innovation & experimentation to build digital products</p>
+              </div>              
+              <div class="outcomes-btn-link">
+                <a href="#">Achieve Business Outcomes.</a>
+              </div>
+              <div class="list-box partner_otr">
+                <span class="pop-text">Find a catalyst and strategic partner.</span>
+                <div class="title">
+                  <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjExM2Q0MDJkOTk2NGM4YjNjYWQ2JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlMTBfSW1hZ2UyX2ZlMDhkNGExZjUmJiYmbWltZT1pbWFnZS9wbmcmJiYmZXh0PS5wbmcmJiYmcHJvdmlkZXI9Y3VzdG9tLWF3cy1zMw==" />
+                </div>
+                  <p>The right partner learns the current operational challenges, simplifies the process while digitizing data sources as required and creates roadmaps 
+                    to solve business pain points and achieve desired outcomes.</p>
+              </div>
+          </div>
+          </div> 
+        </div>
+      </div>
+      <span class="page_count-numeber">Page 10/12</span>
+  </div>
+
+
+  <div data-role="page" id="article10" class="page-count_number">
+    <div class="common-otr collab_inner">
+      <div class="container">
+        <div class="heigh-text"> 
+          <p><span> Collaboration,</span> the vital link</p>
+        </div>
+        <div class="welcome-text">
+          <p>The CXOs play a pivotal role in driving the culture of collaboration to break the silos among teams. Lack of collaboration leads to productivity loss, 
+            confusion, and business takes a major hit.</p>
+          <p>Digital Business is directly proportional to the culture of the organization. It must be driven by the CEO and monitored regularly. To achieve the CIO 
+            vision business and technology work with the right partner to drive digital culture and collaboration across the enterprise.</p>
+          <p>Altimetrik increases collaboration with the client and convergence between the business and technology to create the roadmaps for growth.</p>
+        </div>
+        <div class="heigh-text culture_text"> 
+          <p>Culture of collaboration is crucial to make this happen.</p>
+        </div>
+        <div class="collaboration_img_otr">
+          <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjExOTY0MDJkOTk2NGM4YjNjYWRhJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlMTFfSW1hZ2UxXzBhZTUwYTdiZGQmJiYmbWltZT1pbWFnZS9wbmcmJiYmZXh0PS5wbmcmJiYmcHJvdmlkZXI9Y3VzdG9tLWF3cy1zMw==" />
+        </div>
+        </div>
+      </div>
+      <span class="page_count-numeber">Page 11/12</span>
+  </div>
+
+
+  <div data-role="page" id="article11" class="page-count_number">
+    <div class="common-otr SSOt-welcome-inner">
+      <div class="container">                 
+        <div class="SSOt-last-bg">
+          <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwM2FiMDY0MDJkOTk2NGM4YjNjYjI2JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlMTJfSW1hZ2UxX2UyNWY0OTExZDkmJiYmbWltZT1pbWFnZS9wbmcmJiYmZXh0PS5wbmcmJiYmcHJvdmlkZXI9Y3VzdG9tLWF3cy1zMw==" />
+        </div>
+        <div class="welcome-text">
+          <p>Digital business focuses on effective outcomes that your business needs for growth and profitability, by creating a SSOT, and a culture of innovation and 
+              experimentation, that is simplified and easily launched into operations.</p>
+        </div>
+        <div class="SSOt-last-bg2">
+            <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwM2FiMDY0MDJkOTk2NGM4YjNjYjI2JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlMTJfSW1hZ2UxX2UyNWY0OTExZDkmJiYmbWltZT1pbWFnZS9wbmcmJiYmZXh0PS5wbmcmJiYmcHJvdmlkZXI9Y3VzdG9tLWF3cy1zMw==" />
+          </div>
+        </div>
+      </div>
+      <span class="page_count-numeber">Page 12/12</span>
+  </div>
+</div>
+
+  </body>
 </html>
+
+<Script>$(document).on('swipeleft', '.ui-page', function(event){    
+    if(event.handled !== true) // This will prevent event triggering more then once
+    {    
+        var nextpage = $.mobile.activePage.next('[data-role="page"]');
+        // swipe using id of next page if exists
+        if (nextpage.length > 0) {
+            $.mobile.changePage(nextpage, {transition: "slide", reverse: false}, true, true);
+        }
+        event.handled = true;
+    }
+    return false;         
+});
+
+$(document).on('swiperight', '.ui-page', function(event){     
+    if(event.handled !== true) // This will prevent event triggering more then once
+    {      
+        var prevpage = $(this).prev('[data-role="page"]');
+        if (prevpage.length > 0) {
+            $.mobile.changePage(prevpage, {transition: "slide", reverse: true}, true, true);
+        }
+        event.handled = true;
+    }
+    return false;            
+});
+</script>
