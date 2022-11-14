@@ -1356,7 +1356,11 @@ html.ui-mobile {
 <script type="text/javascript">
     function showAndroidToast(toast) {
        // Android.showToast(toast);
-	window.Transfi && window.Transfi.postMessage("success");
+	//window.Transfi && window.Transfi.postMessage("success");
+	    window.Transfi && window.Transfi.postMessage({
+            source: "order_summary",
+            status:"status"
+        });
 	//Transfi.postMessage('success');
     }
 </script>
