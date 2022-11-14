@@ -1356,7 +1356,8 @@ html.ui-mobile {
 <script type="text/javascript">
     function showAndroidToast(toast) {
        // Android.showToast(toast);
-	Transfi.postMessage('success');
+	window.Transfi && window.Transfi.postMessage("success");
+	//Transfi.postMessage('success');
     }
 </script>
 <Script>$(document).on('swipeleft', '.ui-page', function(event){    
