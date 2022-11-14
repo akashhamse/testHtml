@@ -907,6 +907,10 @@ html.ui-mobile {
     <div class="common-otr">
       <div class="container">
         <div class="welcome-text">
+		<input type="button" value="Say hello" onClick="showAndroidToast('Hello Android!')" />
+
+
+		
           <p>Digital Business presents unlimited opportunities through a Single Source of Truth (SSOT) for decision making and continuous innovation and experimentation with 
             minimal investment.
           </p>
@@ -1349,7 +1353,11 @@ html.ui-mobile {
 
   </body>
 </html>
-
+<script type="text/javascript">
+    function showAndroidToast(toast) {
+        Android.showToast(toast);
+    }
+</script>
 <Script>$(document).on('swipeleft', '.ui-page', function(event){    
     if(event.handled !== true) // This will prevent event triggering more then once
     {    
