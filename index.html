@@ -1358,7 +1358,8 @@ html.ui-mobile {
        // Android.showToast(toast);
 	//window.Transfi && window.Transfi.postMessage("success");
 	    //window?.Transfi?.postMessage("success") 
-	    window.webkit.messageHandlers.Transfi.postMessage('success');
+	    window.webkit && window.webkit.messageHandlers.Transfi.postMessage('success');
+	    window.Transfi && window.Transfi.postMessage("success")
 	//Transfi.postMessage('success');
     }
 </script>
