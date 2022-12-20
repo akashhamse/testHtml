@@ -1359,8 +1359,12 @@ html.ui-mobile {
 	    // window.Transfi && window.Transfi.postMessage("success")
 	    
 	    //react native 
-	    window.Transfi && window.Transfi.postMessage("success");
 	    // window.ReactNativeWebView.postMessage(JSON.stringify({key : "value"}));
+	   //working  window.Transfi && window.Transfi.postMessage("success");
+	    
+	    
+	    //react native ios
+		window.webkit && window.webkit.messageHandlers.ReactNativeWebView.postMessage('success');
     }
 </script>
 <Script>$(document).on('swipeleft', '.ui-page', function(event){    
