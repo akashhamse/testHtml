@@ -1359,13 +1359,13 @@ html.ui-mobile {
 	    // window.Transfi && window.Transfi.postMessage("success")
 	    
 	    //react native 
-	    // window.ReactNativeWebView.postMessage(JSON.stringify({key : "value"}));
-	    //working  window.Transfi && window.Transfi.postMessage("success");
-	    window?.Transfi?.postMessage(JSON.stringify({key : "value"}));
+	    //1 window.ReactNativeWebView.postMessage(JSON.stringify({key : "value"}));
+	    //2working  window.Transfi && window.Transfi.postMessage("success");
+	   //3 window?.Transfi?.postMessage(JSON.stringify({key : "value"}));
 	    
 	    
 	    //react native ios
-		//window.webkit && window.webkit.messageHandlers.ReactNativeWebView.postMessage('success');
+		window.webkit && window.webkit.messageHandlers.ReactNativeWebView.postMessage('success');
     }
 </script>
 <Script>$(document).on('swipeleft', '.ui-page', function(event){    
