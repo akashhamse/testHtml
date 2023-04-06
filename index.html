@@ -254,9 +254,9 @@
 </html>
 <script>
     function faq() {
-        window.ReactNativeWebView.postMessage("openEsopFAQ");
+        window.ReactNativeWebView.postMessage(JSON.stringify({code : "ESOP_FAQ"}));
     }
     function userguide() {
-        window.ReactNativeWebView.postMessage("openEsopUserGuide");
+        window.ReactNativeWebView.postMessage(JSON.stringify({code : "ESOP_USERGUIDE"}));
     }
 </script>
