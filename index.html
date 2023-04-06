@@ -1,1399 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
+
+<head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <meta name="viewport" content="width=device-width,height=device-height,minimum-scale=1,maximum-scale=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-     <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
-     <script src="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
-	 <title>DEX Digital Business_2</title>
-     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" /> 
-    
-  </head>
-  <style>
-.ui-page.ui-page-theme-a {
-    background: #fff;
-    position: relative;
-}
-html.ui-mobile {
-    background: #fff;
-}
-.common-otr {
-    padding: 0 15px;
-    background: #fff;
-}
-    .common-otr .container {
-      width: 1140px;
-      margin: 0 auto;
-    }
-    p {
-      font-family: 'Inter', sans-serif;
-      color: #505A73;
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 32px;
-    }
-    .blue-print p {
-      font-size: 18px;      
-    }
-    .heigh-text p {
-      color: #1A1C22;
-      font-weight: 600;
-      font-size: 20px;
-      line-height: 32px;
-    }
-    .heigh-text p span {
-      color: #E65A14;
-      font-weight: 600;
-      font-size: 20px;
-      line-height: 32px;
-    }
-    .heigh-text p span.blue {
-      color: #4094A7;
-    }
-.list-box-otr {
-    display: flex;
-    justify-content: space-between;
-}
-.component-list.component-list_otr .list-box-otr {
-    flex-wrap: wrap;
-}
-.list-box {
-    float: right;
-    border: 1px solid #E65A14;
-    border-radius: 8px;
-    padding: 15px;
-    width: calc((100% - 0px * 1) / 2);
-    margin-right: 25px;
-}
-.list-box:nth-child(2n) {
-    margin-right: 0;
-}
-.component-list.component-list_otr .list-box {
-    width: 100%;
-    margin: 0 0 25px;
-    padding: 14px;
-}
-.component-list.component-list_otr .list-box:nth-child(2n) {
-    border: 1px solid #4094A7;
-}
-.list-box span {
-    color: #1A1C22;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    font-family: 'Inter', sans-serif;
-    margin: 0 0 10px;
-    display: table;
-}
-.list-box p {
-    color: #1A1C22;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    font-family: 'Inter', sans-serif;
-}
-.component-list .list-box p {
-    display: block;
-    font-weight: 500;
-    color: #505A73;
-    font-size: 16px;
-    line-height: 30px;
-    margin: 0;
-}
-.component-list.component-list_otr .list-box ul {
-    margin: 0;
-    padding: 0 0 0 25px;
-}
-.component-list.component-list_otr .list-box ul li {  
-  font-family: 'Inter', sans-serif;
-  color: #E65A14;
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 34px;
-  margin: 0 0 8px;
-}
-.component-list.component-list_otr .list-box:nth-child(2n) ul li {
-    color: #4094A7;
-}
-.component-list.component-list_otr.alti_blue-print {
-    display: table;
-    margin: 0 auto;
-    position: relative;
-    width: 94%;
-}
-.component-list.component-list_otr.alti_blue-print:before {
-    content: "";
-    position: absolute;
-    left: -20px;
-    top: 70%;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    width: 30px;
-    height: 80%;
-    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwM2E4ZmQ0MDJkOTk2NGM4YjNjYjEzJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNF9BcnJvd2xlZnRfZWVjNGU4YmEyNSYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-.component-list.component-list_otr.alti_blue-print .list-box-inner {
-    display: flex;
-    justify-content: space-between;
-    /* box-shadow: 0px 3px 5px 0px #464c9e30; */
-    margin: 0 0 20px;
-    padding: 10px;
-    border-radius: 8px;
-    position: relative;
-    width: 100%;
-    border: 2px solid #95979F;
-}
-.component-list.component-list_otr.alti_blue-print .list-box-otr h3 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    margin: 0 0 10px;
-    line-height: 20px;
-}
-.component-list.component-list_otr.alti_blue-print .list-box {
-    border: 1px solid #B4B7BF;
-    border-radius: 8px;
-    padding: 14px;
-    width: calc((100% - 28px * 1) / 2);
-    margin-right: 28px;
-    position: relative;
-    margin-bottom: 0;
-}
-.component-list.component-list_otr.alti_blue-print .list-box:nth-child(2n) {
-    margin-right: 0;
-}
-.component-list.component-list_otr.alti_blue-print .list-box:first-child {
-    border: 1px solid #E65A14;
-}
-.component-list.component-list_otr.alti_blue-print .list-box-inner:before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    font-size: 15px;
-    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBiNjc0MDJkOTk2NGM4YjNjYWEzJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNF9BcnJvd182NDExMTk4NmY4JiYmJm1pbWU9aW1hZ2UvcG5nJiYmJmV4dD0ucG5nJiYmJnByb3ZpZGVyPWN1c3RvbS1hd3MtczM=);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 13px;
-    height: 15px;
-}
-.component-list.component-list_otr.alti_blue-print .list-box.list-box-digital:before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: -29px;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    font-size: 20px;
-    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBjNzM0MDJkOTk2NGM4YjNjYWE5JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNF9QbHVzXzQ3NzM3MWQzMTUmJiYmbWltZT1pbWFnZS9wbmcmJiYmZXh0PS5wbmcmJiYmcHJvdmlkZXI9Y3VzdG9tLWF3cy1zMw==);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 20px;
-    height: 20px;
-}
-.component-list.component-list_otr.alti_blue-print .list-box.list-box-digital {
-    width: 100%;
-    border: 1px solid #4094A7;
-    margin-top: 20px;
-}
-.component-list.component-list_otr.alti_blue-print .list-box ul {
-    margin: 0;
-    padding: 0 0 0 15px;
-}
-.component-list.component-list_otr.alti_blue-print .list-box ul li {
-    font-family: 'Inter', sans-serif;
-    color: #505A73;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 18px;
-    margin: 0 0 8px;
-}
-.driving-img {
-    position: relative;
-    display: table;
-    width: 94%;
-    margin: 0 auto;
-}
-.driving-img p {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.title {
-    margin: 0 0 10px;
-    display: flex;
-    align-items: center;
-}
-.list-box .title img {
-    float: left;
-    width: 40px;
-    height: auto;
-}
-.list-box .title h3 {
-    font-family: 'Inter', sans-serif;
-    margin: 0 0 0 5px;
-    color: #1A1C22;
-    font-size: 18px;
-    line-height: 28px;
-}
-.uniq_approach .list-box {
-    border: 1px solid #4094A7;
-}
-.common-otr.empower .list-box-otr {
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 0;
-}
-.common-otr.empower .list-box-otr:before {
-    content: "";
-    position: absolute;
-    bottom: -240px;
-    right: 0;
-    width: 100%;
-    height: 70%;
-    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBkZTk0MDJkOTk2NGM4YjNjYWI1JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNl83XzhfQkdfSW1hZ2VfOGFlM2M1YzdkZCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz);
-    z-index: -1;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-.common-otr.empower .list-box {
-    border: 1px solid #4094A7;
-    border-radius: 8px;
-    padding: 14px;
-    width: 100%;
-    margin: 0 0 25px;
-    display: flex;
-    align-items: center;
-    background: #fff;
-}
-.common-otr.empower .title {
-    margin: 0 25px 0 0;
-    float: left;
-    display: block;
-}
-.common-otr.empower .list-box .title img {
-    width: 90px;
-    height: auto;
-    float: none;
-}
-.common-otr.empower .list-box .title h3 {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    color: #1A1C22;
-    font-size: 12px;
-    line-height: 18px;
-    text-align: center;
-}
-.ui-page.ui-page-theme-a.ui-page-active {
-  overflow: initial;
-}
-.component-list.SSOT-cont .list-box-otr {
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 0;
-}
-.component-list.SSOT-cont .list-box-otr:before {
-    content: "";
-    position: absolute;
-    bottom: -100px;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBkZTk0MDJkOTk2NGM4YjNjYWI1JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNl83XzhfQkdfSW1hZ2VfOGFlM2M1YzdkZCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz);
-    z-index: -1;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-.component-list.SSOT-cont .list-box-inner {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 0 0;
-    padding: 0;
-    border-radius: 8px;
-    position: relative;
-    width: 100%;
-}
-.component-list.SSOT-cont .list-box-inner .list-box {
-    padding: 14px;
-    width: calc((100% - 24px * 1) / 2);
-    margin-right: 24px;
-    position: relative;
-    border: 1px solid #4094A7;
-    border-radius: 8px;
-}
-.component-list.SSOT-cont .list-box-inner .list-box:nth-child(2n) {
-    margin-right: 0;
-}
-.down-arrow-link {
-    display: table;
-    margin: 0 auto;
-    width: 100%;
-}
-.down-arrow-link img {
-    width: 45%;
-    display: table;
-    margin: 0 auto;
-}
-.ssot-btn-link {
-    display: table;
-    margin: 0 auto;
-}
-.ssot-btn-link a {
-    float: left;
-    background: #E65A14;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 10px;
-    height: 38px;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    text-align: center;
-    line-height: 15px;
-    padding: 0 30px;
-    width: 80px;
-    font-weight: 700;
-    text-shadow: none;
-}
-.ssot-btn-link a:hover {
-    color: #fff;
-}
-.list-box.list-box-digital {
-    width: 100%;
-    border: 1px solid #4094A7;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    margin-right: 0;
-    background: #fff;
-    position: relative;
-}
-.list-box.list-box-digital:before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: -22px;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    font-size: 20px;
-    color: #B4B7BF;
-    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBmNWI0MDJkOTk2NGM4YjNjYWM0JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlMDdfQXJyb3dfYTZmMWRiNTY3NyYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 15px;
-    height: 15px;
-}
-.list-box.list-box-digital:after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -20px;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    font-size: 20px;
-    color: #B4B7BF;
-    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBmNWI0MDJkOTk2NGM4YjNjYWM0JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlMDdfQXJyb3dfYTZmMWRiNTY3NyYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 15px;
-    height: 15px;
-}
-.outcomes-btn-link {
-    display: table;
-    margin: 0 auto;
-}
-.outcomes-btn-link a {
-    float: left;
-    background: #E65A14;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 10px;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    line-height: 15px;
-    padding: 10px 15px;
-    width: 180px;
-    font-weight: 600;
-    flex-wrap: wrap;
-    text-align: left;
-    text-shadow: none;
-}
-.outcomes-btn-link a:hover {
-    color: #fff;
-}
-.outcomes-btn-link a span {
-    font-weight: 500;
-    line-height: 20px;
-    display: table;
-    margin: 5px 0 0;
-    font-size: 14px;
-}
-.component-list.SSOT-cont p {
-    margin: 15px 0 40px;
-    font-size: 12px;
-    line-height: 21px;
-    position: relative;
-}
-.component-list.SSOT-cont .list-box p {
-    display: block;
-    font-weight: 500;
-    color: #505A73;
-    font-size: 14px;
-    line-height: 24px;
-    margin: 0;
-}
-.component-list.innova_art {
-    display: table;
-    width: 100%;
-    margin: 40px auto 0;
-    position: relative;
-}
-.component-list.innova_art:before {
-    content: "";
-    position: absolute;
-    left: -22px;
-    top: 0;
-    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBmZDU0MDJkOTk2NGM4YjNjYWM3JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlOF9JbWFnZTFfZjRjMzcyOTZlZCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 22px;
-    height: 100%;
-}
-.component-list.innova_art:after {
-    content: "";
-    position: absolute;
-    right: -22px;
-    top: 0;
-    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjEwMDY0MDJkOTk2NGM4YjNjYWNhJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlOF9JbWFnZTJfY2IyMmFiYTljMiYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 22px;
-    height: 100%;
-}
-.component-list.start_outcome .outcomes-btn-link {
-    display: flex;
-}
-.component-list.innova_art .list-box-otr {
-    flex-wrap: wrap;
-}
-.component-list.innova_art .list-box {
-    border: 1px solid #4094A7;
-    border-radius: 8px;
-    padding: 14px;
-    width: 100%;
-    position: relative;
-    float: none;
-    margin: 0;
-}
-.component-list.innova_art .list-box .title img {
-    float: left;
-    width: 30px;
-    height: auto;
-}
-.component-list.innova_art .list-box .title h3 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 19px;
-    margin: 0 0 0 10px;
-    line-height: 20px;
-}
-.innovate_welcome-otr {
-    display: table;
-    margin: 0 auto 50px;
-    position: relative;
-    padding: 90px 0;
-    z-index: 0;
-}
-.innovate_welcome-otr:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBkZTk0MDJkOTk2NGM4YjNjYWI1JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNl83XzhfQkdfSW1hZ2VfOGFlM2M1YzdkZCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz);
-    z-index: -1;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-.heigh-text.innovate_title {
-    display: table;
-    margin: 0 auto 0;
-}
-.welcome-text.innovate_cont {
-    display: table;
-    margin: 0 auto 30px;
-}
-.heigh-text.innovate_title p {
-    margin: 0;
-}
-.heigh-text.innovate_title p span {
-    font-size: 20px;
-    text-align: center;
-    width: 100%;
-    display: table;
-}
-.welcome-text.innovate_cont p {
-    margin: 0;
-    font-size: 16px;
-}
-.business_cont-outer {
-    display: table;
-    margin: 0 auto;
-    position: relative;
-    z-index: 0;
-}
-.business_cont-outer:before {
-    content: "";
-    position: absolute;
-    top: 51px;
-    left: 0;
-    border-left: 2px solid #E65A14;
-    width: 120px;
-    height: 56%;
-    border-bottom: 2px solid #E65A14;
-    z-index: -1;
-}
-.business_cont-outer:after {
-    content: "";
-    position: absolute;
-    top: 51px;
-    right: 0;
-    border-right: 2px solid #E65A14;
-    width: 120px;
-    height: 56%;
-    border-bottom: 2px solid #E65A14;
-    z-index: -1;
-}
-.business_cont-inner {
-    display: table;
-    margin: 0 auto;
-    position: relative;
-}
-.business_cont-inner:before {
-    content: "";
-    position: absolute;
-    top: 44px;
-    left: -6px;
-    width: 13px;
-    height: 13px;
-    background: #E65A14;
-    border-radius: 50%;
-}
-.business_cont-inner:after {
-    content: "";
-    position: absolute;
-    top: 44px;
-    right: -6px;
-    width: 13px;
-    height: 13px;
-    background: #E65A14;
-    border-radius: 50%;
-}
-.business_list-otr {
-    display: table;
-    width: 90%;
-    margin: 40px auto 0;
-}
-.business_list-otr .outcomes {
-    float: left;
-}
-.business_list-otr h3 {
-    margin: 0;
-    font-weight: 600;
-    color: #1A1C22;
-    font-size: 16px;
-    font-family: 'Inter', sans-serif;
-}
-.business_list-otr span {
-    margin: 15px 0 0;
-    font-weight: 600;
-    color: #4094A7;
-    font-size: 16px;
-    font-family: 'Inter', sans-serif;
-    display: table;
-}
-.business_list-otr .oprations-inner {
-    float: right;
-}
-.business_list-otr h3 {
-    margin: 0;
-    font-weight: 600;
-    color: #1A1C22;
-    font-size: 16px;
-    font-family: 'Inter', sans-serif;
-}
-.business_cont-outer .component-list {
-    display: table;
-    width: 100%;
-    margin: 40px 0 0;
-}
-.business_cont-outer .component-list .list-box-otr {
-    flex-wrap: wrap;
-}
-.business_cont-outer .list-box {
-    border: 1px solid #4094A7;
-    border-radius: 8px;
-    padding: 5px 10px;
-    width: 70%;
-    position: relative;
-    display: table;
-    margin: 0 auto;
-    background: #fff;
-}
-.business_cont-outer .component-list .list-box p {
-    display: block;
-    font-weight: 500;
-    color: #505A73;
-    font-size: 15px;
-    line-height: 20px;
-    text-align: center;
-    margin: 0;
-}
-.business_img_otr {
-    display: table;
-    margin: 70px auto 30px;
-}
-.business_img_otr img {
-    display: table;
-    margin: 0 auto;
-    width: 70%;
-}
-.component-list.start_outcome {
-    display: table;
-    width: 100%;
-    margin: 40px 0 0;
-}
-.component-list.start_outcome .list-box {
-    border: 1px solid #4094A7;
-    border-radius: 8px;
-    padding: 20px 7px 15px;
-    width: auto;
-    position: relative;
-    display: flex;
-    margin: 0 auto;
-    align-items: center;
-}
-.component-list.start_outcome .list-box span.pop-text {
-    position: absolute;
-    top: -14px;
-    left: 12px;
-    background: #fff;
-    border: 1px solid #4094A7;
-    border-radius: 50px;
-    font-size: 12px;
-    color: #E65A14;
-    padding: 0 10px 0;
-}
-.component-list.start_outcome .list-box .title {
-    margin: 0 0 10px;
-    display: flex;
-    align-items: center;
-}
-.component-list.start_outcome .list-box .title img {
-    width: 80px;
-}
-.component-list.start_outcome .list-box p {
-    display: block;
-    font-weight: 500;
-    color: #505A73;
-    font-size: 15px;
-    line-height: 20px;
-    text-align: left;
-    margin: 0 0 0 10px;
-}
-.list-box.ssot_list-inner {
-    width: auto;
-    padding: 10px 8px;
-    margin: 0 auto 21px;
-}
-.component-list.start_outcome .list-box.ssot_list-inner:nth-child(2) {
-    margin-top: 21px;
-}
-.component-list.start_outcome .list-box.ssot_list-inner:before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: -18px;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    font-size: 20px;
-    color: #E65A14;
-    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjEwYWY0MDJkOTk2NGM4YjNjYWQwJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlMTBfQXJyb3dfZDgxYjEyMDZlMCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 12px;
-    height: 12px;
-}
-.component-list.start_outcome .list-box.ssot_list-inner p {
-    margin: 0;
-}
-.component-list.start_outcome .list-box.ssot_list-inner:nth-child(5) {
-    width: 63%;
-}
-.component-list.start_outcome .list-box.ssot_list-inner {
-    width: auto;
-    padding: 10px 8px;
-    margin: 0 auto 21px;
-}
-.outcomes-btn-link {
-    display: table;
-    margin: 0 auto;
-    position: relative;
-}
-.outcomes-btn-link:before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: -19px;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    font-size: 20px;
-    color: #E65A14;
-    background: url(https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjEwYWY0MDJkOTk2NGM4YjNjYWQwJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlMTBfQXJyb3dfZDgxYjEyMDZlMCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 12px;
-    height: 12px;
-}
-.outcomes-btn-link a {
-    background: #E65A14;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 10px;
-    height: 43px;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    line-height: 15px;
-    padding: 4px 15px;
-    font-weight: 500;
-    display: table;
-    float: none;
-    width: 180px;
-    text-align: left;
-}
-.component-list.start_outcome .list-box.partner_otr {
-    margin: 50px auto 10px;
-}
-.component-list.start_outcome .list-box-otr {
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-.common-otr.collab_inner .heigh-text p {
-    color: #1A1C22;
-    font-weight: 600;
-    font-size: 21px;
-    line-height: 32px;
-    margin: 0 0 10px;
-}
-.common-otr.collab_inner .welcome-text p {
-    font-family: 'Inter', sans-serif;
-    color: #505A73;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 32px;
-}
-.common-otr.collab_inner .heigh-text.culture_text p {
-    font-size: 18px;
-    line-height: 25px;
-}
-.collaboration_img_otr {
-    display: table;
-    margin: 0 auto 50px;
-    position: relative;
-}
-.collaboration_img_otr img {
-    display: table;
-    margin: 0 auto;
-    width: 100%;
-}
-.SSOt-last-bg {
-    display: table;
-    margin: 0 auto 30px;
-}
-.SSOt-last-bg img {
-    height: 100%;
-    display: table;
-}
-.common-otr.SSOt-welcome-inner .welcome-text p {
-    text-align: center;
-}
-.SSOt-last-bg2 {
-    display: table;
-    margin: 0 auto 100px;
-    width: 160px;
-}
-.SSOt-last-bg2 img {
-    height: 20px;
-    width: 100%;
-}
-.page-count_roll {
-    background: #fff;
-    margin: 0 auto 30px;
-    display: table;
-}
-.page-count_number span.page_count-numeber {
-    display: table;
-    float: right;
-    margin: 10px 10px 30px 0;
-    color: #95979F;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 19px;
-    position: relative;
-}
-.common-otr.empower {
-    margin: 0 0 180px;
-}
-@media (max-width: 1199px) {
-.common-otr .container {
-    width: 100%;
-    margin: 0 auto;
-}
-}
-@media (max-width: 460px) {
-  .business_list-otr h3 {
-    font-size: 13px;
-}
-.business_list-otr span {
-    font-size: 13px;
-}
-.component-list .list-box p {
-    font-size: 12px;
-}
-}
-@media (max-width: 320px) {
-  .business_list-otr h3 {
-    font-size: 12px;
-}
-.business_list-otr span {
-    font-size: 12px;
-}
-.component-list .list-box p {
-    font-size: 11px;
-}
-}
-  </style>
-  
-  <body>
-    <div class="page-count_roll">
-     <div data-role="page" id="article1" class="page-count_number">
-    <div class="common-otr">
-      <div class="container">
-        <div class="welcome-text">
-		<input type="button" value="Say hello" onClick="showAndroidToast('Hello Android!')" />
+
+    <title>ESOP</title>
 
 
-		
-          <p>Digital Business presents unlimited opportunities through a Single Source of Truth () for decision making and continuous innovation and experimentation with 
-            minimal investment.
-          </p>
-          <img style="width: 100%; height: 100%;" src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBhY2U0MDJkOTk2NGM4YjNjYWEwJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlMl9JbWFnZTFfYTE2MGM5YTM4MCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
-        </div>
-        <div class="heigh-text">
-          <p>Why Digital Business <span>Drives Growth</span> and <span>Profitability</span> without Disrupting Current Business</p>
-        </div>
-        <div class="component-list">
-          <p>Two fundamental components that make it possible</p>
-          <div class="list-box-otr">
-            <div class="list-box">
-              <span>Single Source of Truth (SSOT)</span>
-              <p>Data that everyone can trust to give the right insights for new ideas and effective operations.</p>
+</head>
+<style>
+    /* about-cont */
+    .platformTitle {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: -0.003em;
+        text-transform: capitalize;
+        color: #1A1C22;
+        padding: 5px 0px;
+    }
+
+    .platformSubTitle {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 24px;
+        letter-spacing: 0.139028px;
+        color: #1A1C22;
+        padding: 8px 0px 5px 0px;
+
+    }
+
+    .platformContent {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 20px;
+        /* or 162% */
+        letter-spacing: 0.01em;
+        /* Light/Text/Description */
+        color: #6C6F76;
+    }
+
+    .responsive {
+        width: 100%;
+        max-width: 355px;
+        height: auto;
+        margin: auto;
+        display: block;
+    }
+
+    .img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        /* width: 50%; */
+        position: relative;
+    }
+
+    .container {
+        margin: 2px 10px;
+        min-width: 200px;
+        max-width: 650px;
+        padding: 16px;
+        margin: 0 auto;
+    }
+
+    .esop_Card {
+        /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+        padding: 25px;
+        align-items: center;
+        display: flex;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+    }
+
+    .esop_Card_text {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        color: #1A1C22;
+        padding: 2px 0px;
+    }
+
+    .esop_Card_desc {
+        font-family: 'Inter', sans-serif;
+        color: #6C6F76;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .esop_Vcard {
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+    }
+
+    .esop_Vcardcontent {
+        padding: 15px;
+    }
+
+    video {
+        width: 100%;
+        max-height: 100%;
+        box-sizing: border-box;
+        border-radius: 8px 8px 0px 0px;
+    }
+
+    .esop_Card_title {
+        font-family: 'Inter', sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 24px;
+        letter-spacing: 0.01em;
+        color: #1A1C22;
+    }
+
+    .esop_Card_description {
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.01em;
+        color: #505A73;
+    }
+
+    ul {
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+        margin: 15px 0px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .left {
+        display: inline-block;
+        width: 65%;
+    }
+
+    .right {
+        display: inline-block;
+        float: right;
+        width: 35%;
+    }
+
+    .right img {
+        width: 100%;
+        max-width: 100px;
+        float: right;
+    }
+</style>
+
+<body>
+    <div class="about-tab_otr">
+        <div class="container">
+            <div class="platformTitle">Documents</div>
+            <div class="platformContent">Read the ESOP related documents that will assist and answer all your queries
             </div>
-            <div class="list-box">
-              <span>Innovation</span>
-              <p>A culture of experimentation and the ability to create new digital products with speed.</p>
+
+            <div>
+                <ul>
+                    <li>
+                        <a onclick="faq()">
+                            <div class="esop_Card">
+                                <div class="left">
+                                    <div class="esop_Card_text">ESOP FAQ</div>
+                                    <div class="esop_Card_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Suspendisse</div>
+                                </div>
+                                <div class="right">
+                                    <img
+                                        src='data:image/png;base64,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' />
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="userguide()">
+                            <div class="esop_Card">
+                                <div class="left">
+                                    <div class="esop_Card_text">ESOP User Guide</div>
+                                    <div class="esop_Card_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Suspendisse</div>
+                                </div>
+                                <div class="right">
+                                    <img
+                                        src='data:image/png;base64,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' />
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
             </div>
-          </div>
-          </div>      
-        <p>Together it creates a value stream across the company, with reusable digital assets.</p>
-      </div>
+
+            <div>
+                <div class="platformTitle">Videos</div>
+                <ul>
+                    <li>
+                        <div class="esop_Vcard">
+                            <video controls>
+                                <source src="http://techslides.com/demos/sample-videos/small.ogv">
+                            </video>
+                            <div class="esop_Vcardcontent">
+                                <div class="esop_Card_title">Raj V </div>
+                                <div class="esop_Card_description">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit. Suspendisse
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="esop_Vcard">
+                            <video controls>
+                                <source
+                                    src="https://dex-stock-option-vid.s3.amazonaws.com/The+vision+behind+Altimetrik's+Digital+Employee+Engagement+platform.mp4">
+                            </video>
+                            <div class="esop_Vcardcontent">
+                                <div class="esop_Card_title">Raj V </div>
+                                <div class="esop_Card_description">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit. Suspendisse
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
     </div>
-    <span class="page_count-numeber">Page 02/12</span>
-	</div>
-	
-	
-	 <div data-role="page" id="article2" class="page-count_number">
-    <div class="common-otr">
-      <div class="container">
-        <div class="heigh-text">
-          <p><span>Digital</span> Transformation VS Digital <span class="blue">BUSINESS</span>
-          </p>
-        </div>
-        <div class="welcome-text">
-          <p>They may seem the same, but they are not.</p>
-        </div>
-        <div class="component-list component-list_otr">
-          <div class="list-box-otr">
-            <div class="list-box">
-              <ul>
-                <li>Technology takes the lead and tries to drive change</li>
-                <li>A big-bang approach to boil the ocean with little focus on outcomes</li>
-                <li>Focuses on technologies and solutions with big investments</li>
-                <li>Takes an app-based approach, adding further complexity</li>
-                <li>Complex and perpetuates a silo-ed approach</li>
-                <li>Can take months to deliver results</li>
-                <li>Innovation requires heavy investment</li>
-              </ul>
-            </div>
-            <div class="list-box">
-              <ul>
-                <li>Business takes ownership and collaborates with technology</li>
-                <li>Incremental approach leveraging existing resources to achieve bite-sized outcomes</li>
-                <li>Leverages data intelligently to make smarter decisions</li>
-                <li>Takes product engineering approach creating reusable digital assets</li>
-                <li>Focused on simplification and collaboration</li>
-                <li>Begins to deliver results in weeks</li>
-                <li>Continuous experimentation and innovation at low investment</li>
-              </ul>
-            </div>
-          </div>
-          </div> 
-        </div>
-      </div>
-      <span class="page_count-numeber">Page 03/12</span>
-	</div>
-	
-	
-	 <div data-role="page" id="article3" class="page-count_number">
-    <div class="common-otr blue-print">
-      <div class="container">
-        <div class="heigh-text">
-          <p>How Altimetrik <span>Enables Digital Business</span>
-          </p>
-        </div>
-        <div class="welcome-text">
-          <p>By converging the entire business, technology, and operations on an agile model.
-          </p>
-          <p>Altimetrik is a catalyst and digital partner to enable digital business without interruption. Through collaboration, we eliminate silos and develop 
-            innovative digital products with speed.
-          </p>
-        </div>
-        <div class="heigh-text">
-          <p><span>The Altimetrik Blueprint</span>
-          </p>
-        </div>
-        <div class="component-list component-list_otr alti_blue-print">
-          <div class="list-box-otr">
-            <div class="list-box-inner">
-            <div class="list-box">
-              <h3>Practitioners</h3>
-              <ul>
-                <li>Simplifies the entire process</li>
-                <li>Assesses the need</li>
-                <li>Creates end-to-end roadmap</li>
-                <li>Breaks into smaller sprints</li>
-              </ul>
-            </div>
-            <div class="list-box">
-              <h3>Disciplined Agile Engineering Teams</h3>
-              <ul>
-                <li>Formed as agile scrum teams</li>
-                <li>Work in short iterations</li>
-                <li>Deliver results in high frequency</li>
-              </ul>
-            </div>
-          </div>
-            <div class="list-box list-box-digital">
-              <h3>Business Digital Platform</h3>
-              <ul>
-                <li>Agile, cloud-based environment for end-to-end execution</li>
-                <li>Standardized engineering focused on reusable asset creation</li>
-              </ul>
-            </div>
-          </div>
-          </div> 
-          <div class="driving-img">
-            <p>Driving continuous collaboration between business and technology to make decisions based on data from the SSOT</p>
-            <img style="width: 100%; height: 100%;" src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBjMTI0MDJkOTk2NGM4YjNjYWE2JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNF9JbWFnZTFfZDZhZjMwNTRiOCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
-          </div>          
-        </div>
-      </div>
-      <span class="page_count-numeber">Page 04/12</span>
-	</div>
 
 
-  <div data-role="page" id="article4" class="page-count_number">
-    <div class="common-otr blue-print uniq_approach">
-      <div class="container">
-        <div class="heigh-text">
-          <p><span>Altimetrik Unique Approach</span>
-          </p>
-        </div>
-        <div class="welcome-text">
-          <p>Bringing together the key ingredients to enable Digital Business</p>
-        </div>
-        
-        <div class="component-list component-list_otr">
-          <div class="list-box-otr">
-            <div class="list-box">
-              <div class="title">
-                <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBjY2M0MDJkOTk2NGM4YjNjYWFjJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNV9JbWFnZTFfZDU4YjdkNGE3NCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
-                <h3>TALENT</h3>
-              </div>
-                <p>Practitioners – the solution providers for business outcomes through simplification of the end-to-end process and breaking it into smaller 
-                  sprints.</p>
-                <p>Engineering teams – agile and collaborative, converging business and technology to build outcomes.</p>
-                <p>This is rare talent that we are highly focused on finding globally. In fact, our selection rate to find the people who can drive this new way of thinking is 10%.</p>
-            </div>
-            <div class="list-box">
-              <div class="title">
-                <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBkMTY0MDJkOTk2NGM4YjNjYWFmJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNV9JbWFnZTJfMmQzMWRkMGMzNCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
-                <h3>CULTURE</h3>
-              </div>
-                <p>Agile and focused on collaboration.</p>
-                <p>With an end-to-end perspective, our practitioners and engineering teams enable the business and technology to converge and accelerate outcomes.
-                  By breaking down the traditional silos, we create high productivity, solving problems through innovation.</p>
-            </div>
-            <div class="list-box">
-              <div class="title">
-                <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBkNjA0MDJkOTk2NGM4YjNjYWIyJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNV9JbWFnZTNfNGYwOGM4ODQ1MSYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
-                <h3>PLATFORM</h3>
-              </div>
-                <p>Our state-of-the-art business digital platform in the cloud creates an agile engineering environment for a simplified end-to-end orchestration of digital business without disrupting the existing business.</p>
-                <p>Leverages cloud and integrates with the SSOT and digital products to build reusable assets and components and orchestrates them with the existing systems and technologies to launch into operations. It takes care of security and compliance through DevSecOps that works in tandem with production teams to minimize risk.</p>
-            </div>
-          </div>
-          </div>                 
-        </div>
-      </div>
-      <span class="page_count-numeber">Page 05/12</span>
-  </div>
-    
+</body>
 
-  <div data-role="page" id="article5" class="page-count_number">
-  <div class="common-otr empower">
-    <div class="container">
-      <div class="heigh-text">
-        <p>Key Digital Business Behavioral Patterns <span>Empowering Growth</span>
-        </p>
-      </div>        
-      <div class="component-list">
-        <div class="list-box-otr">
-          <div class="list-box">
-            <div class="title">
-              <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBlM2E0MDJkOTk2NGM4YjNjYWI4JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNl9JbWFnZTFfNDFiMGM1ZTliOCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
-              <h3>TALENT</h3>
-            </div>
-              <p>Simplification of the end-to-end process by breaking down into bite-sized pieces and delivering outcomes with speed through higher collaboration 
-                between business and technology.
-              </p>
-          </div>
-          <div class="list-box">
-            <div class="title">
-              <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBlYTk0MDJkOTk2NGM4YjNjYWJiJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNl9JbWFnZTJfY2MwN2IxYjM3MiYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
-              <h3>Increased Productivity</h3>
-            </div>
-              <p>Product Engineering approach that goes from low code to no code, is component-based building reusable assets leveraging existing resources.</p>
-          </div>
-          <div class="list-box">
-            <div class="title">
-              <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBlZDk0MDJkOTk2NGM4YjNjYWJlJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNl9JbWFnZTNfYWJlM2UyNTVlMCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
-              <h3>Data Driven & Experimentation</h3>
-            </div>
-              <p>Data gathered from across the enterprise and orchestrated into a SSOT empowering business and technology collaboration to make decisions and build 
-                new digital products faster.</p>
-          </div>
-          <div class="list-box">
-            <div class="title">
-              <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjBmMDY0MDJkOTk2NGM4YjNjYWMxJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlNl9JbWFnZTRfOTBhNzBiYzZhNCYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
-              <h3>Faster Outcomes</h3>
-            </div>
-              <p>Outcomes achieved with speed and at an overall reduced cost due to increased productivity in teams and agility in solving problems.</p>
-          </div>
-        </div>
-        </div>                 
-      </div>
-    </div>
-    <span class="page_count-numeber">Page 06/12</span>
-  </div>
-
-
-  <div data-role="page" id="article6" class="page-count_number">
-    <div class="common-otr">
-      <div class="container">
-        <div class="heigh-text">
-          <p><span>Creating a Single Source of Truth</span> (SSOT) for Data
-          </p>
-        </div>
-        <div class="welcome-text">
-          <p>For many companies, data is decentralized and not digitized, collaboration is absent, silos are blocking outcomes and results are hard to achieve.</p>
-          <p>Regardless of data sources or technology our practitioners overcome these challenges by digitizing the data and simplifying end-to-end workflows in bite-sized 
-            pieces. They bring it all together to connect and analyze the data in small use cases that converge into the SSOT.</p>
-        </div>     
-        <div class="component-list SSOT-cont">
-          <div class="list-box-otr">
-            <div class="list-box-inner">
-              <div class="list-box">
-                  <p>Multiple Data Sources both structured and unstructured.</p>
-              </div>
-              <div class="list-box">
-                  <p>Digitized and connected through data pipelines based on required outcomes.</p>
-              </div>
-            </div>
-            <div class="down-arrow-link">
-              <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwM2FhMmU0MDJkOTk2NGM4YjNjYjIwJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlN19BcnJvdzJfNmFlNjVjMzgwNyYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
-            </div>
-            <div class="ssot-btn-link">
-              <a href="#">SSOT</a>
-            </div>
-            <div class="list-box list-box-digital">
-                <p>Sophisticated AI and ML algorithms used for analyzing, prediction, and forecasting.</p>
-                <p>Insights from trusted data to help various business functions take faster decisions, simulate scenarios, and adapt to change.</p>
-            </div>            
-            <div class="outcomes-btn-link">
-              <a href="#">OUTCOMES<span>Revenue, profit, cash, market share, brand value</span></a>
-            </div>
-          </div>
-          <p>(SSOT is extremely valuable for functions like demand, supply chain, inventory management, customer behavior among others.)</p>
-          </div>
-        </div>
-      </div>
-      <span class="page_count-numeber">Page 07/12</span>
-  </div>
-
-
-  <div data-role="page" id="article7" class="page-count_number">
-    <div class="common-otr">
-      <div class="container">
-        <div class="heigh-text">
-          <p>Successful Products and Solutions come from <span>Innovation and The Art of Experimentation</span>
-          </p>
-        </div>
-        <div class="welcome-text">
-          <p>Not a big bang approach, innovation and experimentation is best achieved through bite-sized pieces.</p>
-        </div>     
-        <div class="component-list innova_art">
-          <div class="list-box-otr">
-              <div class="list-box">                  
-              <div class="title">
-                <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwM2FhOWU0MDJkOTk2NGM4YjNjYjIzJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlOF9JbWFnZTNfYTUxNTU0MWRmMSYmJiZtaW1lPWltYWdlL3BuZyYmJiZleHQ9LnBuZyYmJiZwcm92aWRlcj1jdXN0b20tYXdzLXMz" />
-                <h3>Shifting the lens:</h3>
-              </div>
-                  <p>Empowering employees to ideate and create simple solutions.</p>
-                  <p>Even a proof of concept is a product that can be reused.</p>
-                  <p>Build assets and accelerators that are reusable and scalable.</p>
-              </div>
-          </div>
-          </div>
-          <div class="innovate_welcome-otr">
-          <div class="heigh-text innovate_title">
-            <p><span>The flow is simple, and NOT cost intensive:</span>
-            </p>
-          </div>
-          <div class="welcome-text innovate_cont">
-            <p>Innovate. Experiment. Prove the Concept. Productize</p>
-          </div>
-        </div>
-        </div>
-      </div>
-      <span class="page_count-numeber">Page 08/12</span>
-  </div>
-
-  <div data-role="page" id="article8" class="page-count_number">
-    <div class="common-otr">
-      <div class="container">
-        <div class="heigh-text">
-          <p>Integrate Digital</p> 
-          <p><span>Business into Operations</span></p>
-        </div>
-        <div class="welcome-text">
-          <p>The idea is not to disrupt current systems and technologies, but to orchestrate them along with the SSOT and launch into the business operations.</p>
-          <p>Digital business does not change any existing system such as an ERP or operations management tools.</p>
-        </div>
-        <div class="business_cont-outer">
-          <div class="business_cont-inner">
-        <div class="business_list-otr">
-          <div class="outcomes">
-            <h3>Business Outcomes</h3>
-            <span>SSOT</span>
-          </div>
-          <div class="oprations-inner">
-            <h3>Business Operations</h3>
-          </div>
-        </div>     
-        <div class="component-list">
-          <div class="list-box-otr">
-              <div class="list-box"> 
-                  <p> Digital Business Platform orchestrates the end-to-end workflow and integrates seamlessly into operations.</p>
-              </div>
-          </div>
-          </div>
-        </div>
-        </div>
-          <div class="business_img_otr">
-            <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjEwNjQ0MDJkOTk2NGM4YjNjYWNkJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlOV9CR18yYWFhZmRjOTVjJiYmJm1pbWU9aW1hZ2UvcG5nJiYmJmV4dD0ucG5nJiYmJnByb3ZpZGVyPWN1c3RvbS1hd3MtczM=" />
-          </div>
-        </div>
-      </div>
-      <span class="page_count-numeber">Page 09/12</span>
-  </div>
-
-
-  <div data-role="page" id="article9" class="page-count_number">
-    <div class="common-otr">
-      <div class="container">
-        <div class="heigh-text"> 
-          <p><span>Where do you start</span></p>
-        </div>
-        <div class="welcome-text">
-          <p>Companies, especially mid-sized ones, don’t know where to start and are deterred by large companies making big investments without clear outcomes.</p>
-          <p>Digital business is not a choice, it is the path forward.</p>
-        </div>   
-        <div class="component-list start_outcome">
-          <div class="list-box-otr">
-              <div class="list-box">
-                <span class="pop-text">Start by identifying the pain points.</span>
-                <div class="title">
-                  <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjExMDM0MDJkOTk2NGM4YjNjYWQzJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlMTBfSW1hZ2UxXzhjMDY3NjZkOGEmJiYmbWltZT1pbWFnZS9wbmcmJiYmZXh0PS5wbmcmJiYmcHJvdmlkZXI9Y3VzdG9tLWF3cy1zMw==" />
-                </div>
-                  <p> For example, lack of knowledge of cash tied up in the supply chain could depress operational margins and profits. No insight to customer buying 
-                    behavior prevents the right product gets to the right customer at the right time.</p>
-              </div>
-              <div class="list-box ssot_list-inner">
-                <p>Create SSOT for each business function</p>
-              </div>
-              <div class="list-box ssot_list-inner">
-                <p>Bridge the business functions across the enterprise.</p>
-              </div>
-              <div class="list-box ssot_list-inner">
-                <p>Create SSOT at enterprise level</p>
-              </div>
-              <div class="list-box ssot_list-inner">
-                <p>Create culture of innovation & experimentation to build digital products</p>
-              </div>              
-              <div class="outcomes-btn-link">
-                <a href="#">Achieve Business Outcomes.</a>
-              </div>
-              <div class="list-box partner_otr">
-                <span class="pop-text">Find a catalyst and strategic partner.</span>
-                <div class="title">
-                  <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjExM2Q0MDJkOTk2NGM4YjNjYWQ2JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlMTBfSW1hZ2UyX2ZlMDhkNGExZjUmJiYmbWltZT1pbWFnZS9wbmcmJiYmZXh0PS5wbmcmJiYmcHJvdmlkZXI9Y3VzdG9tLWF3cy1zMw==" />
-                </div>
-                  <p>The right partner learns the current operational challenges, simplifies the process while digitizing data sources as required and creates roadmaps 
-                    to solve business pain points and achieve desired outcomes.</p>
-              </div>
-          </div>
-          </div> 
-        </div>
-      </div>
-      <span class="page_count-numeber">Page 10/12</span>
-  </div>
-
-
-  <div data-role="page" id="article10" class="page-count_number">
-    <div class="common-otr collab_inner">
-      <div class="container">
-        <div class="heigh-text"> 
-          <p><span> Collaboration,</span> the vital link</p>
-        </div>
-        <div class="welcome-text">
-          <p>The CXOs play a pivotal role in driving the culture of collaboration to break the silos among teams. Lack of collaboration leads to productivity loss, 
-            confusion, and business takes a major hit.</p>
-          <p>Digital Business is directly proportional to the culture of the organization. It must be driven by the CEO and monitored regularly. To achieve the CIO 
-            vision business and technology work with the right partner to drive digital culture and collaboration across the enterprise.</p>
-          <p>Altimetrik increases collaboration with the client and convergence between the business and technology to create the roadmaps for growth.</p>
-        </div>
-        <div class="heigh-text culture_text"> 
-          <p>Culture of collaboration is crucial to make this happen.</p>
-        </div>
-        <div class="collaboration_img_otr">
-          <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwMjExOTY0MDJkOTk2NGM4YjNjYWRhJiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlMTFfSW1hZ2UxXzBhZTUwYTdiZGQmJiYmbWltZT1pbWFnZS9wbmcmJiYmZXh0PS5wbmcmJiYmcHJvdmlkZXI9Y3VzdG9tLWF3cy1zMw==" />
-        </div>
-        </div>
-      </div>
-      <span class="page_count-numeber">Page 11/12</span>
-  </div>
-
-
-  <div data-role="page" id="article11" class="page-count_number">
-    <div class="common-otr SSOt-welcome-inner">
-      <div class="container">                 
-        <div class="SSOt-last-bg">
-          <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwM2FiMDY0MDJkOTk2NGM4YjNjYjI2JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlMTJfSW1hZ2UxX2UyNWY0OTExZDkmJiYmbWltZT1pbWFnZS9wbmcmJiYmZXh0PS5wbmcmJiYmcHJvdmlkZXI9Y3VzdG9tLWF3cy1zMw==" />
-        </div>
-        <div class="welcome-text">
-          <p>Digital business focuses on effective outcomes that your business needs for growth and profitability, by creating a SSOT, and a culture of innovation and 
-              experimentation, that is simplified and easily launched into operations.</p>
-        </div>
-        <div class="SSOt-last-bg2">
-            <img src="https://covidsupport.altimetrik.com/dexapi/api/v1/loadMedia/aWQ9NjIwM2FiMDY0MDJkOTk2NGM4YjNjYjI2JiYmJmhhc2g9RGlnaXRhbF9CdXNpbmVzc19QYWdlMTJfSW1hZ2UxX2UyNWY0OTExZDkmJiYmbWltZT1pbWFnZS9wbmcmJiYmZXh0PS5wbmcmJiYmcHJvdmlkZXI9Y3VzdG9tLWF3cy1zMw==" />
-          </div>
-        </div>
-      </div>
-      <span class="page_count-numeber">Page 12/12</span>
-  </div>
-</div>
-
-  </body>
 </html>
-<script type="text/javascript">
-    function showAndroidToast(toast) {
-	    
-	    window.ReactNativeWebView.postMessage("openEsopFAQ");
-
-	    // window.webkit && window.webkit.messageHandlers.Transfi.postMessage('success');
-	    // window.Transfi && window.Transfi.postMessage("success")
-	    
-	    //react native 
-	    //1 window.ReactNativeWebView.postMessage(JSON.stringify({key : "value"}));
-	    //2working  window.Transfi && window.Transfi.postMessage("success");
-	    //below line was uncommented
-	    // window?.Transfi?.postMessage(JSON.stringify({key : "value"}));
-	    
-	    
-	    //react native ios
-	     //  window.webkit && window.webkit.messageHandlers.Transfi.postMessage(JSON.stringify({key : "value"}));
+<script>
+    function faq() {
+        window.ReactNativeWebView.postMessage("openEsopFAQ");
     }
-</script>
-<Script>$(document).on('swipeleft', '.ui-page', function(event){    
-    if(event.handled !== true) // This will prevent event triggering more then once
-    {    
-        var nextpage = $.mobile.activePage.next('[data-role="page"]');
-        // swipe using id of next page if exists
-        if (nextpage.length > 0) {
-            $.mobile.changePage(nextpage, {transition: "slide", reverse: false}, true, true);
-        }
-        event.handled = true;
+    function userguide() {
+        window.ReactNativeWebView.postMessage("openEsopUserGuide");
     }
-    return false;         
-});
-
-$(document).on('swiperight', '.ui-page', function(event){     
-    if(event.handled !== true) // This will prevent event triggering more then once
-    {      
-        var prevpage = $(this).prev('[data-role="page"]');
-        if (prevpage.length > 0) {
-            $.mobile.changePage(prevpage, {transition: "slide", reverse: true}, true, true);
-        }
-        event.handled = true;
-    }
-    return false;            
-});
 </script>
