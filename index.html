@@ -253,10 +253,37 @@
 
 </html>
 <script>
-    function faq() {
-        window.ReactNativeWebView.postMessage(JSON.stringify({code : "ESOP_FAQ"}));
-    }
-    function userguide() {
-        window.ReactNativeWebView.postMessage(JSON.stringify({code : "ESOP_USERGUIDE"}));
-    }
+   function faq() {
+  window.ReactNativeWebView.postMessage(
+    JSON.stringify({
+      code: "ESOP_FAQ",
+      label: "ESOP FAQ",
+      redirectionUrl: null,
+      linkType: "EBOOK",
+      amplitudeChannel: "TotalTaps_title",
+      title: null,
+      pendingActionCount: 0,
+      inActiveIconMedia: null,
+      isEDoc: true,
+      category: "MYSPACE",
+    })
+  );
+}
+function userguide() {
+  window.ReactNativeWebView.postMessage(
+    JSON.stringify({
+      code: "ESOP_USERGUIDE",
+      label: "ESOP User Guide",
+      redirectionUrl: null,
+      linkType: "EBOOK",
+      amplitudeChannel: "TotalTaps_title",
+      title: null,
+      pendingActionCount: 0,
+      inActiveIconMedia: null,
+      isEDoc: true,
+      category: "MYSPACE",
+    })
+  );
+}
+
 </script>
