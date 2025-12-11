@@ -34,135 +34,19 @@
       margin: 0;
       overflow-x: hidden;
     }
-    .welcome-container h1 {
-      margin: 30px 0 15px 0;
-      font-family: "Inter";
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 24px;
-      letter-spacing: 0em;
-      text-align: center;
-      color: #1f1f1f;
-    }
-    .welcome-container p {
-      margin: 0 0 30px 0;
-      font-family: "Inter";
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 24px;
-      letter-spacing: 0em;
-      text-align: center;
-      color: #454545;
-    }
-    .center {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 50%;
-    }
-    .skip-btn {
-      color: #454545;
-      flex: 1;
-    }
-    .next-btn {
-      color: #ffffff;
-      padding: 10px 20px;
-      border-radius: 4px;
-      background: #095dff;
-    }
-    .btn-container {
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-    }
-    .btn-inner-container {
-      display: flex;
-      flex: 1;
-      align-items: center;
-    }
-    .welcome-container {
-      padding: 0 20px;
-      margin: 40px 0;
-    }
-    .btn-outer-container {
-      position: absolute;
-      bottom: 20px;
-      left: 0px;
-      width: 100%;
-    }
-    .welcome-outer-container {
-      margin: 20px 0;
-    }
-    .page {
-      padding: 20px 0;
-      min-width: 200px;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    .last-btn {
-      flex: 1;
-      text-align: center;
-      display: none;
-    }
-    .carousel-indicators .active {
-      background-color: #0c5cff;
-      width: 40px;
-      border-radius: 15px;
-      border: 0px;
-    }
-    .carousel-indicators li {
-      background-color: #bfbfbf;
-      border-radius: 50%;
-      width: 10px;
-      height: 10px;
-    }
-    .carousel-indicators {
-      position: relative;
-      align-items: center;
-    }
-    .logo-img {
-      width: 90%;
-      height: auto;
-      display: block;
-      margin: 15% auto;
-      background-blend-mode: darken;
-      mix-blend-mode: darken;
-    }
+    
   </style>
   <body>
    <div>hi</div>
+   <input
+      ref={fileInputRef}
+      type="file"
+      accept="image/*"
+      capture="environment"
+      style={{ display: 'none' }}
+      onChange={handleFileChange}
+    />
   </body>
 </html>
 
-<script>
-  // $("#carouselExampleIndicators").on("slid.bs.carousel", "", function (event) {
-  //   console.log("asdf", event);
-  //   const { to, from, direction } = event;
-  //   // var $this = $(this);
-  //   // $this.children(".carousel-control").show();
-  //   // if ($(".carousel-inner .item:first").hasClass("active")) {
-  //   //   $this.children(".left.carousel-control").hide();
-  //   // } else if ($(".carousel-inner .item:last").hasClass("active")) {
-  //   //   $this.children(".right.carousel-control").hide();
-  //   // }
-  // });
 
-  $("#carouselExampleIndicators").on("slide.bs.carousel", function (event) {
-    const { to, from } = event;
-    if (to === 2) {
-      document.getElementById("next-btn").style.display = "none";
-      document.getElementById("last-btn").style.display = "block";
-    } else {
-      document.getElementById("next-btn").style.display = "flex";
-      document.getElementById("last-btn").style.display = "none";
-    }
-  });
-  function openHomeScreen() {
-    window.ReactNativeWebView.postMessage(
-      JSON.stringify({
-        code: "OPEN_HOME",
-        label: "OPEN_HOME",
-      })
-    );
-  }
-</script>
