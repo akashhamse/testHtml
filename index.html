@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Camera Test</title>
-
+</head>
  <body>
-<div class="container">
-  <div class="title">Upload Document 3</div>
+
+   <div class="container">
+  <div class="title">Upload Document</div>
 
   <!-- Camera Option -->
   <div class="card" onclick="openCamera()">
@@ -27,7 +28,7 @@
     </div>
   </div>
 
-  <!-- Hidden Inputs for Web Only -->
+  <!-- Hidden Inputs -->
   <input 
     id="cameraInput"
     type="file"
@@ -36,7 +37,6 @@
     onchange="handleFileChange(event)"
     style="display:none"
   />
-
   <input 
     id="libraryInput"
     type="file"
@@ -48,69 +48,37 @@
   <div class="preview" id="previewContainer"></div>
 
   <script>
-    // Detect if inside React Native WebView
     const isWebView = !!window.ReactNativeWebView;
 
     function openCamera() {
       if (isWebView) {
-        // Mobile WebView: request camera via React Native
-        window.ReactNativeWebView.postMessage(
-          JSON.stringify({ type: "REQUEST_CAMERA" })
-        );
+        window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'REQUEST_CAMERA' }));
       } else {
-        // Desktop/Web: trigger hidden input
         document.getElementById('cameraInput').click();
       }
     }
 
     function openLibrary() {
       if (isWebView) {
-        // Mobile WebView: request file via React Native
-        window.ReactNativeWebView.postMessage(
-          JSON.stringify({ type: "REQUEST_FILE" })
-        );
+        window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'REQUEST_FILE' }));
       } else {
-        // Desktop/Web: trigger hidden input
         document.getElementById('libraryInput').click();
       }
     }
 
-    // Web: Handle file selection
     function handleFileChange(event) {
       const files = event.target.files;
       const previewContainer = document.getElementById('previewContainer');
-      previewContainer.innerHTML = "";
+      previewContainer.innerHTML = '';
 
       Array.from(files).forEach(file => {
-        const div = document.createElement("div");
+        const div = document.createElement('div');
         div.textContent = `Selected: ${file.name}`;
         previewContainer.appendChild(div);
       });
     }
-
-    // Mobile WebView: Listen for response from React Native
-    window.addEventListener("message", function (event) {
-      const { type, payload } = event.data || {};
-
-      if (type === "CAMERA_RESULT") {
-        if (payload) {
-          alert("Camera Granted (WebView) — handle native capture now");
-          // You can trigger file capture on native side here
-        } else {
-          alert("Camera Denied (WebView)");
-        }
-      }
-
-      if (type === "FILE_RESULT") {
-        if (payload) {
-          alert("File Access Granted (WebView) — handle native picker now");
-          // You can open native file picker here
-        } else {
-          alert("File Access Denied (WebView)");
-        }
-      }
-    });
   </script>
 </div>
+
 </body>
 </html>
