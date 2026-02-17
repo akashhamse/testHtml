@@ -114,6 +114,35 @@
     <div class="preview" id="previewContainer"></div>
   </div>
 
+  <button onclick="requestCamera()">Request Camera</button>
+<button onclick="requestFile()">Request File Access</button>
+
+<script>
+  function requestCamera() {
+    window.ReactNativeWebView.postMessage(
+      JSON.stringify({ type: "REQUEST_CAMERA" })
+    );
+  }
+
+  function requestFile() {
+    window.ReactNativeWebView.postMessage(
+      JSON.stringify({ type: "REQUEST_FILE" })
+    );
+  }
+
+  window.addEventListener("message", function (event) {
+    const { type, payload } = event.data || {};
+
+    if (type === "CAMERA_RESULT") {
+      alert(payload ? "Camera Granted" : "Camera Denied");
+    }
+
+    if (type === "FILE_RESULT") {
+      alert(payload ? "File Access Granted" : "File Access Denied");
+    }
+  });
+</script>
+
   <script>
     function openCamera() {
       document.getElementById("cameraInput").click();
