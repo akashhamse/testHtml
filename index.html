@@ -8,7 +8,7 @@
  <body>
 
    <div class="container">
-  <div class="title">Upload Document5 </div>
+  <div class="title">Upload Document 6 </div>
 
   <!-- Camera Option -->
   <div class="card" onclick="openCamera()">
@@ -66,17 +66,31 @@
       }
     }
 
-    function handleFileChange(event) {
-      const files = event.target.files;
-      const previewContainer = document.getElementById('previewContainer');
-      previewContainer.innerHTML = '';
+  
+  function handleFileChange(event) {
+    const files = event.target.files;
+    const previewContainer = document.getElementById('previewContainer');
+    previewContainer.innerHTML = ''; // Clear previous previews
 
-      Array.from(files).forEach(file => {
+    Array.from(files).forEach(file => {
+      // Only preview images
+      if (file.type.startsWith('image/')) {
+        const img = document.createElement('img');
+        img.src = URL.createObjectURL(file);
+        img.style.width = '150px';
+        img.style.height = '150px';
+        img.style.objectFit = 'cover';
+        img.style.margin = '5px';
+        previewContainer.appendChild(img);
+      } else {
+        // For PDFs or other files, just show filename
         const div = document.createElement('div');
         div.textContent = `Selected: ${file.name}`;
         previewContainer.appendChild(div);
-      });
-    }
+      }
+    });
+  }
+
   </script>
 </div>
 
