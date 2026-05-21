@@ -530,6 +530,12 @@
         .range-wrap {
           min-width: 90px;
         }
+        .fx-value {
+          font-size: 1.8rem;
+        }
+        #goldGrid {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
       }
       @media (max-width: 480px) {
         .gold-grid {
@@ -541,6 +547,9 @@
         .tab {
           font-size: 0.62rem;
           padding: 5px 10px;
+        }
+        #goldGrid {
+          grid-template-columns: 1fr !important;
         }
       }
 
@@ -571,7 +580,7 @@
   <body>
     <div class="wrapper">
       <header>
-        <div class="logo">MARKET<span>PULSE</span></div>
+        <div>MARKET</div>
         <div class="header-right">
           <div class="live-badge">
             <div class="live-dot"></div>
@@ -805,6 +814,20 @@
           >
             Auto
           </button>
+          <button
+            class="tab"
+            data-panel="in-gold"
+            onclick="showTab(this, 'in-gold')"
+          >
+            Gold
+          </button>
+          <button
+            class="tab"
+            data-panel="in-p1"
+            onclick="showTab(this, 'in-p1')"
+          >
+            P1
+          </button>
         </div>
         <div class="tab-panel active" id="in-it">
           <div class="stock-table-wrap">
@@ -894,6 +917,52 @@
             </table>
           </div>
         </div>
+
+        <div class="tab-panel" id="in-gold">
+          <div class="stock-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Ticker</th>
+                  <th>Company</th>
+                  <th>Price (INR)</th>
+                  <th>Change</th>
+                  <th>Chg%</th>
+                  <th>P/E</th>
+                  <th>52W Range</th>
+                </tr>
+              </thead>
+              <tbody id="inGoldTbody">
+                <tr class="loading-row">
+                  <td colspan="7">Loading…</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="in-p1">
+          <div class="stock-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Ticker</th>
+                  <th>Company</th>
+                  <th>Price (INR)</th>
+                  <th>Change</th>
+                  <th>Chg%</th>
+                  <th>P/E</th>
+                  <th>52W Range</th>
+                </tr>
+              </thead>
+              <tbody id="inP1Tbody">
+                <tr class="loading-row">
+                  <td colspan="7">Loading…</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
         <div class="data-note">
           * Click row → Google Finance. NSE tickers used. Some ETFs may show
           limited data.
@@ -945,28 +1014,23 @@
       ];
 
       const IN_IT = [
-        { t: "MON100", n: "Motilal Oswal Nasdaq 100 ETF" },
-        { t: "TRENT", n: "Trent" },
-        { t: "BAJAJHFL", n: "Bajaj Housing Finance" },
-        { t: "ITC", n: "ITC" },
-        { t: "RELIANCE", n: "Reliance Industries" },
-        { t: "PGINVIT", n: "Powergrid Infrastructure InvIT" },
-        { t: "TATATECH", n: "Tata Technologies" },
+        { t: "INFY", n: "Infosys" },
+        { t: "TCS", n: "TCS" },
+        { t: "WIPRO", n: "Wipro" },
+        { t: "HCLTECH", n: "HCL Technologies" },
+        { t: "ITBEES", n: "IT BEES ETF" },
+        { t: "TECHM", n: "Tech Mahindra" },
       ];
-
       const IN_PHARMA = [
-        { t: "THANGAMAYL", n: "Thangamayil Jewellery" },
-        { t: "MANAPPURAM", n: "Manappuram Finance" },
-        { t: "MUTHOOTFIN", n: "Muthoot Finance" },
-        { t: "KALYANKJIL", n: "Kalyan Jewellers" },
-        { t: "TITAN", n: "Titan Company" },
-        { t: "GOLDBEES", n: "GoldBees ETF" },
-        { t: "SILVERBEES", n: "SilverBees ETF" },
+        { t: "NATCOPHARM", n: "Natco Pharma" },
+        { t: "DIVISLAB", n: "Divi's Labs" },
+        { t: "LUPIN", n: "Lupin" },
+        { t: "PHARMABEES", n: "Pharma BEES ETF" },
+        { t: "DRREDDY", n: "Dr Reddy's" },
+        { t: "ZYDUSLIFE", n: "Zydus Lifesciences" },
+        { t: "SUNPHARMA", n: "Sun Pharma" },
       ];
       const IN_BANKING = [
-        { t: "HDBFS", n: "HDB Financial Services" },
-        { t: "TATACAP", n: "Tata Capital" },
-        { t: "DCBBANK", n: "DCB Bank" },
         { t: "SOUTHBANK", n: "South Indian Bank" },
         { t: "IDFCFIRSTB", n: "IDFC First Bank" },
         { t: "KTKBANK", n: "Karnataka Bank" },
@@ -976,16 +1040,41 @@
         { t: "TMB", n: "Tamilnad Mercantile" },
         { t: "HDFCBANK", n: "HDFC Bank" },
         { t: "AXISBANK", n: "Axis Bank" },
+        { t: "HDBFS", n: "HDB Financial Services" },
+        { t: "TATACAP", n: "Tata Capital" },
+        { t: "DCBBANK", n: "DCB Bank" },
       ];
       const IN_AUTO = [
+        { t: "TATASTEEL", n: "Tata Steel" },
+        { t: "HEROMOTOCO", n: "Hero MotoCorp" },
+        { t: "EICHERMOT", n: "Eicher Motors" },
+        { t: "MOTHERSON", n: "Motherson Sumi" },
+        { t: "LT", n: "Larsen & Toubro" },
         { t: "TMPV", n: "Tracxn / TMPV" },
         { t: "BAJAJ-AUTO", n: "Bajaj Auto" },
-        { t: "EICHERMOT", n: "Eicher Motors" },
         { t: "TVSMOTOR", n: "TVS Motor" },
-        { t: "MOTHERSON", n: "Motherson" },
         { t: "TMCV", n: "Tata Motors CV" },
         { t: "LT", n: "Larsen & Toubro" },
-        { t: "TATAMOTORS", n: "Tata Motors" },
+      ];
+
+      const IN_P1 = [
+        { t: "MON100", n: "Motilal Oswal Nasdaq 100 ETF" },
+        { t: "TRENT", n: "Trent" },
+        { t: "BAJAJHFL", n: "Bajaj Housing Finance" },
+        { t: "ITC", n: "ITC" },
+        { t: "RELIANCE", n: "Reliance Industries" },
+        { t: "PGINVIT", n: "Powergrid Infrastructure InvIT" },
+        { t: "TATATECH", n: "Tata Technologies" },
+      ];
+
+      const IN_GOLD = [
+        { t: "THANGAMAYL", n: "Thangamayil Jewellery" },
+        { t: "MANAPPURAM", n: "Manappuram Finance" },
+        { t: "MUTHOOTFIN", n: "Muthoot Finance" },
+        { t: "KALYANKJIL", n: "Kalyan Jewellers" },
+        { t: "TITAN", n: "Titan Company" },
+        { t: "GOLDBEES", n: "GoldBees ETF" },
+        { t: "SILVERBEES", n: "SilverBees ETF" },
       ];
 
       // ═══════════════════════════════════════════════
@@ -1391,21 +1480,26 @@
 
         try {
           await renderGold();
-          const [usOk, itOk, pharmaOk, bankOk, autoOk] = await Promise.all([
-            renderTable("usStocksTbody", US_STOCKS, false),
-            renderTable("inItTbody", IN_IT, true),
-            renderTable("inPharmaTbody", IN_PHARMA, true),
-            renderTable("inBankingTbody", IN_BANKING, true),
-            renderTable("inAutoTbody", IN_AUTO, true),
-          ]);
+          const [usOk, itOk, pharmaOk, bankOk, autoOk, goldOk, p1Ok] =
+            await Promise.all([
+              renderTable("usStocksTbody", US_STOCKS, false),
+              renderTable("inItTbody", IN_IT, true),
+              renderTable("inPharmaTbody", IN_PHARMA, true),
+              renderTable("inBankingTbody", IN_BANKING, true),
+              renderTable("inAutoTbody", IN_AUTO, true),
+              renderTable("inGoldTbody", IN_GOLD, true),
+              renderTable("inP1Tbody", IN_P1, true),
+            ]);
 
           const usTotal = US_STOCKS.length,
             inTotal =
               IN_IT.length +
               IN_PHARMA.length +
               IN_BANKING.length +
-              IN_AUTO.length;
-          const inOk = itOk + pharmaOk + bankOk + autoOk;
+              IN_AUTO.length +
+              IN_GOLD.length +
+              IN_P1.length;
+          const inOk = itOk + pharmaOk + bankOk + autoOk + goldOk + p1Ok;
 
           const stUs = document.getElementById("st-us");
           const stIn = document.getElementById("st-in");
